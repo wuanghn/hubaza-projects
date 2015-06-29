@@ -1,0 +1,1 @@
+/Applications/XAMPP/xamppfiles/htdocs/hubaza/Projects/izquote/app/views/posts/edit.blade.php
