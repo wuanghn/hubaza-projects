@@ -11,6 +11,7 @@
 |
 */
 
+
+Route::controller('post','DucAnhController');
 Route::controller('/','PostsController');
 
-Route::controller('post','ducanhController');
