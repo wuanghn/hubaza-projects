@@ -1,11 +1,11 @@
 <?php
 
-class DucAnhController extends BaseController {
+class DucAnhController extends \BaseController {
 
 	
 	public function getIndex()
 	{
-		echo 'xxx';
+		return View::make('posts.create');
 	}
 
 

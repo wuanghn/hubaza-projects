@@ -13,10 +13,10 @@
     <title>Blog Home - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/blog-home.css" rel="stylesheet">
+    <link href="{{asset('public/assets/css/style_da.css')}}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -67,15 +67,18 @@
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <form action="#" method="post" enctype="multipart/form-data"  >
+            <form action="#" method="post" enctype="multipart/form-data" id="da_form_post" >
             
-            <div class="col-md-6 col-xs-offset-1">
+            <div class="col-md-7 col-xs-offset-1">
                 <div>
-                <a class="da_choose_file" href="#">Change my photo</a>
+                    <div class="da_backgroup"></div>
+                <a class="da_choose_file" href="#">Change Background</a>
                 </div>
-                <div>
-                    <p class="da_div_quote">xxxxxx</p>
+                <div style="width: 600px">
+                    <p class="da_div_quote">Text here</p>
+                     <p class="da_div_author"></p>
                 <img  class="img-responsive da_img_post" src="https://media2.wnyc.org/i/620/372/l/80/1/blackbox.jpeg" alt="">
+
                 <input type="file" class="hidden" name="image" id="da_image">
                 </div>
                 
@@ -100,7 +103,7 @@
 
                    <div class="form-group">
                     <label>Author</label>
-                    <input type="text" class ="form-control" name="author">
+                    <input type="text" class ="form-control" name="author" id="da_author">
                    </div>
                    <div class="hidden">
                     <input type="text" id="height" name="height">
@@ -123,65 +126,14 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{{asset('public/assets/js/jquery.js')}}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+    <script src="{{asset('public/assets/js/bootstrap.min.js')}}"></script>
 
-    $(document).ready(function(){
-
-         $(".da_img_post").load(function() {
-
-
-        height = $(this).height();
-        height_div = $('.da_div_quote').height();
-        $('#width').val($(this).width());
-         $('#height').val(height);
-
-         $('.da_div_quote').css('margin-top', (height-(height_div/2))/2);
-    });
-
-
-
-         $('.da_choose_file').click(function(){
-            $('#da_image').click();
-         })
-
-
-         function readURL(input) {
-
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('.da_img_post').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-$("#da_image").change(function(){
-    readURL(this);
-});
-
-$('#da_quote').keyup(function(){
-    height = $('.da_img_post').height();
-        height_div = $('.da_div_quote').height();
-
-    $('.da_div_quote').css('margin-top', (height-(height_div/2))/2);
-$('.da_div_quote').text($(this).val());
-
-
+     <script src="{{asset('public/assets/js/post_da.js')}}"></script>
     
-})
-
-
-
-
-    })
-    </script>
 
 </body>
 
