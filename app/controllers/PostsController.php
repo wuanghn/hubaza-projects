@@ -59,7 +59,7 @@ class PostsController extends \BaseController
 
 	public function postStore()
 	{
-		// 
+		dd(Input::all());
 	}
 
 }
