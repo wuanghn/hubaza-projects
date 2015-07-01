@@ -67,7 +67,7 @@
             <div class="row">
 
                 <!-- Blog Entries Column -->
-                <form action="/store" method="post" enctype="multipart/form-data" id="da_form_post" >
+                <form action="{{url('store')}}" method="post" enctype="multipart/form-data" id="da_form_post" >
 
                     <div class="col-md-7 col-xs-offset-1 da_hidden_respon">
                         <div>
