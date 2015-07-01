@@ -9,7 +9,7 @@ class DucAnhController extends \BaseController {
 	}
 
 	function getTest(){
-		var_dump(nl2br(Input::get('body'))) ;
+		var_dump(Input::all()) ;
 	}
 
 

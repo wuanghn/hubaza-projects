@@ -112,7 +112,7 @@
                             <div class="hidden">
                                 <input type="text" id="height" name="height">
                                 <input type="text" id="width" name="width">
-                                <input type="text" id="body2" name = "body2">
+                                
                             </div>
 
                             <input type="submit" value="Create" class="form-control btn btn-primary btn-block" id="da_submit_post">

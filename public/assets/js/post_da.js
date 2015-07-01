@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-   $(".da_img_post").load(function() {
+ $(".da_img_post").load(function() {
 
 
     height = $(this).height();
@@ -9,65 +9,63 @@ $(document).ready(function(){
     $('#height').val(height);
 
     $('.da_div_quote').css('margin-top', (height-height_div)/2);
-    $('.da_div_author').css('margin-top', ((height-height_div)/2) + 50);
+    $('.da_div_author').css('margin-top', ((height-height_div)/2) +height_div +50);
 
 });
 
 
 
-   $('.da_choose_file').click(function(){
+ $('.da_choose_file').click(function(){
     $('#da_image').click();
 })
 
 
-   function readURL(input) {
+ function readURL(input) {
 
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         var image  = new Image();
-       
+
 
         reader.onload = function (e) {
-             var _width;
-            var _height =0;
-            
+           var _width;
+           var _height =0;
+           $('.da_img_post').attr('src', e.target.result);
 
-            image.src    = e.target.result; 
-            image.onload = function() {
-                width = this.width;
-                height = this.height;
 
-                ti_le = parseFloat(width)/600;
+           image.src    = e.target.result; 
+           image.onload = function() {
+            width = this.width;
+            height = this.height;
 
-                if(width >=600 && height >=315){
+            ti_le = parseFloat(width)/600;
 
-                    _height = parseInt(height/ ti_le);
+            if(width >=600 && height >=315){
 
-                    
+                _height = parseInt(height/ ti_le);
 
-                    
+                $('#height').val(_height);
 
-                    $('#height').val(_height);
 
-                     $('.da_img_post').attr('src', e.target.result);
 
-             console.log(_height);
-                   
 
-                }
-                else{
-                    // $('.da_img_post').attr('src','https://media2.wnyc.org/i/620/372/l/80/1/blackbox.jpeg');
-                    alert('Minimum Image width 600px , height 315px !');
-                }
-            };
 
-           
-            
-        }
 
-        reader.readAsDataURL(input.files[0]);
-        
+            }
+            else{
+                $('#da_image').val('');
+                $('.da_img_post').attr('src','https://media2.wnyc.org/i/620/372/l/80/1/blackbox.jpeg');
+                alert('Minimum Image width 600px , height 315px !', 'Notification');
+            }
+        };
+
+
+
     }
+
+    reader.readAsDataURL(input.files[0]);
+
+}
 }
 
 $("#da_image").change(function(){
@@ -115,11 +113,7 @@ $('#da_form_post').validate({
 }
 })
 
-$('#da_submit_post').click(function(){
-    html = $('.da_div_quote').html();
-    $('#body2').val(html);
-    console.log(html);
-})
+
 
 
 
