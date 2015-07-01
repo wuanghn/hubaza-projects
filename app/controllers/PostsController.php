@@ -38,7 +38,7 @@ class PostsController extends \BaseController
 		require app_path().'/start/boximage/Box.php';
 		require app_path().'/start/boximage/Color.php';
 
-		$im = imagecreatetruecolor(500, 500);
+		$im = imagecreatetruecolor(600, 375);
 		$backgroundColor = imagecolorallocate($im, 0, 18, 64);
 		imagefill($im, 0, 0, $backgroundColor);
 
@@ -46,7 +46,7 @@ class PostsController extends \BaseController
 		$box->setFontFace(public_path('HelveticaNeue-Medium.ttf')); // http://www.dafont.com/franchise.font
 		$box->setFontColor(new Color(255, 75, 140));
 		$box->setTextShadow(new Color(0, 0, 0, 50), 2, 2);
-		$box->setFontSize(40);
+		$box->setFontSize(24);
 		$box->setBox(20, 20, 460, 460);
 		$box->setTextAlign('center', 'center');
 		$box->draw("Đa tình tự cổ không như hận \n Câu này của ai vậy trời \n");
@@ -59,7 +59,28 @@ class PostsController extends \BaseController
 
 	public function postStore()
 	{
-		dd(Input::all());
+		$save = nl2br(Input::get('body'));
+
+		$save = str_replace("<br />", "", $save);
+
+		require app_path().'/start/boximage/Box.php';
+		require app_path().'/start/boximage/Color.php';
+
+		$im = imagecreatetruecolor(600, 375);
+		$backgroundColor = imagecolorallocate($im, 51, 153, 255);
+		imagefill($im, 0, 0, $backgroundColor);
+
+		$box = new Box($im);
+		$box->setFontFace(public_path('HelveticaNeue-Medium.ttf')); // http://www.dafont.com/franchise.font
+		$box->setFontColor(new Color(255, 255, 255));
+		//$box->setTextShadow(new Color(0, 0, 0, 50), 2, 2);
+		$box->setFontSize(24);
+		$box->setBox(20, 20, 600, 375);
+		$box->setTextAlign('center', 'center');
+		$box->draw($save);
+
+		header("Content-type: image/png");
+		imagepng($im);
 	}
 
 }
