@@ -25,28 +25,47 @@ $(document).ready(function(){
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         var image  = new Image();
-        var width_ = 0;
-        var height_ = 0;
+       
 
         reader.onload = function (e) {
-            $('.da_img_post').attr('src', e.target.result);
+             var _width;
+            var _height =0;
+            
 
             image.src    = e.target.result; 
             image.onload = function() {
-                width_ = this.width;
-                height_ = this.height;
+                width = this.width;
+                height = this.height;
 
+                ti_le = parseFloat(width)/600;
 
-        };
+                if(width >=600 && height >=315){
+
+                    _height = parseInt(height/ ti_le);
+
+                    
+
+                    
+
+                    $('#height').val(_height);
+
+                     $('.da_img_post').attr('src', e.target.result);
+
+             console.log(_height);
+                   
+
+                }
+                else{
+                    // $('.da_img_post').attr('src','https://media2.wnyc.org/i/620/372/l/80/1/blackbox.jpeg');
+                    alert('Minimum Image width 600px , height 315px !');
+                }
+            };
+
+           
             
         }
-        console.log(height_);
 
-        if(width_ >= 0){
-            reader.readAsDataURL(input.files[0]);
-        }
-        else
-            alert('Minimum Image width 600px , height 315px !');
+        reader.readAsDataURL(input.files[0]);
         
     }
 }
@@ -88,12 +107,18 @@ $('#da_form_post').validate({
     body: {
       required: true,
       minlength: 3
-    },
-    title: {
+  },
+  title: {
       required: true,
       minlength: 3
-    }
   }
+}
+})
+
+$('#da_submit_post').click(function(){
+    html = $('.da_div_quote').html();
+    $('#body2').val(html);
+    console.log(html);
 })
 
 

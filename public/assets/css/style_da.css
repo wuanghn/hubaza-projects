@@ -28,7 +28,7 @@ footer {
   padding: 0px 10px;
 }
 .da_div_quote{
-	font-size: 30px;
+	font-size: 24px;
 	color: white;
 	position:absolute;
 	margin-left: auto;
@@ -57,4 +57,39 @@ footer {
 .error{
 	color: red;
 }
+.da_div_change_image{
+	display: none;
+}
+.da_div_quote{
+	white-space: pre-wrap;
+word-wrap:break-word;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+	.da_hidden_respon{
+		display: none;
+	}
+	.da_div_change_image{
+		display: block;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
