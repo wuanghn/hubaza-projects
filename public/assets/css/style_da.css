@@ -22,10 +22,11 @@ footer {
 	position: absolute;
   margin-top: 10px;
   margin-left: 62%;
-  color: white;
+  color: black;
   font-size: 16px;
-  background-color: rgba(184, 37, 71, 0.41);
+  background-color: rgba(255, 255, 255, 0.87);
   padding: 0px 10px;
+  border-radius: 3px;
 }
 .da_div_quote{
 	font-size: 24px;
@@ -39,12 +40,13 @@ footer {
 	text-align: center;
 }
 .da_div_author{
-	font-size: 22px;
+	font-size: 24px;
 	color: white;
 	position:absolute;
 	margin-top: 55%;
 	padding: 0px 20px;
-	right: 100px;
+	text-align: center;
+	width: 600px;
 }
 
 .da_backgroup{
@@ -63,6 +65,11 @@ footer {
 .da_div_quote{
 	white-space: pre-wrap;
 word-wrap:break-word;
+}
+.div_content_center{
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
 }
 
 

@@ -12,5 +12,9 @@ class DucAnhController extends \BaseController {
 		var_dump(Input::all()) ;
 	}
 
+	function getHome(){
+		return View::make('home.home');
+	}
+
 
 }

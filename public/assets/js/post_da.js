@@ -4,12 +4,11 @@ $(document).ready(function(){
 
 
     height = $(this).height();
-    height_div = $('.da_div_quote').height();
+  
     $('#width').val($(this).width());
     $('#height').val(height);
 
-    $('.da_div_quote').css('margin-top', (height-height_div)/2);
-    $('.da_div_author').css('margin-top', ((height-height_div)/2) +height_div +50);
+    position = vitri(height);
 
 });
 
@@ -74,10 +73,8 @@ $("#da_image").change(function(){
 
 $('#da_quote').keyup(function(){
     height = $('.da_img_post').height();
-    height_div = $('.da_div_quote').height();
 
-    $('.da_div_quote').css('margin-top', (height-height_div)/2);
-    $('.da_div_author').css('margin-top', ((height-height_div)/2) +height_div +50);
+    position = vitri(height);
 
     $('.da_div_quote').text($(this).val());
 
@@ -87,12 +84,15 @@ $('#da_quote').keyup(function(){
 
 $('#da_author').keyup(function(){
     height = $('.da_img_post').height();
-    height_div = $('.da_div_quote').height();
 
-    $('.da_div_quote').css('margin-top', (height-height_div)/2);
-    $('.da_div_author').css('margin-top', ((height-height_div)/2) +height_div +50);
+    position = vitri(height);
 
-    $('.da_div_author').text($(this).val());
+
+    
+
+    $('.da_div_author').text('- '+$(this).val()+' -');
+
+    
 
 
     
@@ -112,6 +112,27 @@ $('#da_form_post').validate({
   }
 }
 })
+
+
+function vitri(height){
+  height_author = $('.da_div_author').height();
+  height_div = $('.da_div_quote').height();
+
+  if(height_author!= 0){
+    height_author = height_author +72;
+  }
+
+  total = (height_author + height_div) / 2; //1 nưa của phần chữ
+
+  position_body = (height/2) - total;
+  position_author = (height/2) - total + height_div +72;
+
+    $('.da_div_quote').css('margin-top', position_body);
+    $('.da_div_author').css('margin-top', position_author);
+
+
+
+}
 
 
 

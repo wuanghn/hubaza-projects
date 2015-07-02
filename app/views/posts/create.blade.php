@@ -77,7 +77,7 @@
                         <div style="width: 600px">
                             <p class="da_div_quote">Text here</p>
                             <p class="da_div_author"></p>
-                            <img  class="img-responsive da_img_post" src="https://media2.wnyc.org/i/620/372/l/80/1/blackbox.jpeg" alt="">
+                            <img  class="img-responsive da_img_post" src="http://i126.photobucket.com/albums/p89/robertthomas_2006/600x600.png?t=1241980077" alt="">
 
 
                         </div>
