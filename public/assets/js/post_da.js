@@ -89,8 +89,10 @@ $('#da_author').keyup(function(){
 
 
     
-
-    $('.da_div_author').text('- '+$(this).val()+' -');
+    if($(this).val() !="")
+      $('.da_div_author').text('- '+$(this).val()+' -');
+    else
+      $('.da_div_author').text('');
 
     
 
