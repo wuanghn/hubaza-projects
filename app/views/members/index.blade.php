@@ -1,0 +1,1 @@
+/Applications/MAMP/htdocs/izquote/app/views/members/index.blade.php
