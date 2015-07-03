@@ -71,6 +71,38 @@ word-wrap:break-word;
 	margin-right: auto;
 	float: none;
 }
+.da_fb_like{
+	margin: 20px 0px 20px 0px;
+}
+.col-md-6.div_content_center{
+	border-bottom: 2px solid #e8e8e8;
+	background-color: white;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	padding-top: 10px;
+}
+.lead{
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.da_fb_like .btn-social i{
+	border-right: none;
+}
+
+.da_fb_like .btn-social{
+	padding-left: 35px;
+}
+.da_fb_like .btn-facebook{
+	margin-right: 20px;
+}
+
+.da_fb_like .btn{
+	border: none;
+}
+
+
+
+
 
 
 
