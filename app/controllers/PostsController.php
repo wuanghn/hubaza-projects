@@ -117,19 +117,55 @@ class PostsController extends \BaseController
 		$box->setTextAlign('center', 'center');
 		$box->draw($save);
 
-		header('Content-Type: image/jpeg');
-		imagejpeg($im); 
-
+		// header('Content-Type: image/jpeg');
+		// imagejpeg($im); 
 		
 		imagejpeg($im, public_path("uploads/store/$radomString.jpg")); 
+
+		Post::create([
+			"title" => Input::get('title'),
+			"image" => "uploads/store/$radomString.jpg",
+			"created" => $this->timenow(),
+			"id_user" => 7
+		]);
 	}
 
 
 
 
-	public function getResize()
+	public function timenow()
 	{
-		Image::make(public_path('uploads/default/default.png'))->resize(600, 600)->save(public_path('uploads/default/default.jpg'));
+		date_default_timezone_set('Asia/Ho_Chi_Minh');
+		    $weekday = date("l");
+		    // $weekday = strtolower($weekday);
+		    // switch($weekday) {
+		    //     case 'monday':
+		    //         $weekday = 'Thứ hai';
+		    //         break;
+		    //     case 'tuesday':
+		    //         $weekday = 'Thứ ba';
+		    //         break;
+		    //     case 'wednesday':
+		    //         $weekday = 'Thứ tư';
+		    //         break;
+		    //     case 'thursday':
+		    //         $weekday = 'Thứ năm';
+		    //         break;
+		    //     case 'friday':
+		    //         $weekday = 'Thứ sáu';
+		    //         break;
+		    //     case 'saturday':
+		    //         $weekday = 'Thứ bảy';
+		    //         break;
+		    //     default:
+		    //         $weekday = 'Chủ nhật';
+		    //         break;
+		    // }
+		    return $weekday.', '.date('d/m/Y');
 	}
+	// public function getResize()
+	// {
+	// 	Image::make(public_path('uploads/default/default.png'))->resize(600, 600)->save(public_path('uploads/default/default.jpg'));
+	// }
 
 }
