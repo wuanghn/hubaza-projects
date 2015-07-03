@@ -32,6 +32,13 @@ class PostsController extends \BaseController
 
 
 
+	public function detail($slug)
+	{
+		return View::make('posts.show');
+	}
+
+
+
 
 	public function getTestImage()
 	{
@@ -122,12 +129,20 @@ class PostsController extends \BaseController
 		
 		imagejpeg($im, public_path("uploads/store/$radomString.jpg")); 
 
-		Post::create([
+		$post = Post::create([
 			"title" => Input::get('title'),
 			"image" => "uploads/store/$radomString.jpg",
 			"created" => $this->timenow(),
 			"id_user" => 7
 		]);
+
+
+		// update slug
+		$slug = Str::slug(Input::get('title'))."-".$post->id;
+		Post::updateOrCreate(array('id' => $post->id), array('slug' => $slug));
+
+		return Redirect::to($slug);
+
 	}
 
 
@@ -137,30 +152,6 @@ class PostsController extends \BaseController
 	{
 		date_default_timezone_set('Asia/Ho_Chi_Minh');
 		    $weekday = date("l");
-		    // $weekday = strtolower($weekday);
-		    // switch($weekday) {
-		    //     case 'monday':
-		    //         $weekday = 'Thứ hai';
-		    //         break;
-		    //     case 'tuesday':
-		    //         $weekday = 'Thứ ba';
-		    //         break;
-		    //     case 'wednesday':
-		    //         $weekday = 'Thứ tư';
-		    //         break;
-		    //     case 'thursday':
-		    //         $weekday = 'Thứ năm';
-		    //         break;
-		    //     case 'friday':
-		    //         $weekday = 'Thứ sáu';
-		    //         break;
-		    //     case 'saturday':
-		    //         $weekday = 'Thứ bảy';
-		    //         break;
-		    //     default:
-		    //         $weekday = 'Chủ nhật';
-		    //         break;
-		    // }
 		    return $weekday.', '.date('d/m/Y');
 	}
 	// public function getResize()

@@ -13,5 +13,10 @@
 
 
 Route::controller('post','DucAnhController');
+
+Route::get('{slug}','PostsController@detail');
+
 Route::controller('/','PostsController');
+
+
 
