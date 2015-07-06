@@ -9,6 +9,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <!-- fb -->
+    @if(! $post)
+        <meta property="og:url" content="{{url()}}">
+        <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public/assets/img/image.png')}}">
+        <meta property="og:title" itemprop="headline" content="IZquote · The coolest quote generator">
+        <meta property="og:description" content="Create your own quote at: izquote.com">
+    @else
+        <meta property="og:url" content="{{url($post->slug)}}">
+        <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public')}}/{{$post->image}}">
+        <meta property="og:title" itemprop="headline" content="{{$post->title}}">
+        <meta property="og:description" content="{{$post->quote}}">
+    @endif
+
+
+
     <title>Blog Home - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->

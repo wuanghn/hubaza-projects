@@ -6,35 +6,31 @@ class PostsController extends \BaseController
 {
 	public function getIndex()
 	{
-		$img = Image::make(public_path('foo.png'));
-
-		// use callback to define details
-		$img->text("Đa tình tự cổ không như hận \n Câu này của ai vậy trời \n", 372, 300, function($font) {
-			$font->file(public_path('HelveticaNeue-Medium.ttf'));
-		    $font->size(35);
-		    $font->color('#fdf6e3');
-		    $font->align('center');
-		    $font->valign('middle');
-		});
-		// $img->text('The quick brown fox jumps over the lazy dog.');
-		//$img->greyscale();
+		// Home page
+	}
 
 
-		// add filter
-		//$img->colorize(0, 30, 0);
 
-		// $watermark = Image::make('public/watermark.png');
-		// $img->insert($watermark, 'center');
-
-		return $img->response();
-		//$img->save(public_path('save.jpg'));
+	public function getLoginFb()
+	{
+		// login social page
 	}
 
 
 
 	public function detail($slug)
 	{
-		return View::make('posts.show');
+		$post = Post::find($this->getLastId($slug));
+		if($post->slug == $slug)
+		{
+			$post->url_page = url($slug);
+			$post->url_image = asset('public/'.$post->image);
+			$post_new = Post::orderBy('id','desc')->take(5)->get();
+			return View::make('posts.show',compact('post','post_new'));
+		}else
+		{
+			return Redirect::to('/');
+		}
 	}
 
 
@@ -154,9 +150,15 @@ class PostsController extends \BaseController
 		    $weekday = date("l");
 		    return $weekday.', '.date('d/m/Y');
 	}
-	// public function getResize()
-	// {
-	// 	Image::make(public_path('uploads/default/default.png'))->resize(600, 600)->save(public_path('uploads/default/default.jpg'));
-	// }
+
+
+
+
+	public function getLastId($slug)
+	{
+		$arr = explode('-', $slug);
+		return end($arr);
+	}
+
 
 }
