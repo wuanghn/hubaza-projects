@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <!-- fb -->
-    @if(! $post)
+    @if(isset($post))
         <meta property="og:url" content="{{url()}}">
         <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public/assets/img/image.png')}}">
         <meta property="og:title" itemprop="headline" content="IZquote · The coolest quote generator">
