@@ -24,7 +24,7 @@ return array(
         'Facebook' => array(
             'client_id'     => '828149473934812',
             'client_secret' => 'bf30b1eccdcf4355bb3e3deb83086c4c',
-            'scope'         => array(),
+            'scope'         => array('email'),
         ),		
 
 	)
