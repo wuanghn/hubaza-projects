@@ -6,12 +6,9 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"way/generators": "~2.0",
-<<<<<<< Updated upstream
 		"intervention/image": "~2.3",
-		"ext-gd": "*"
-=======
-		"intervention/image": "^2.3"
->>>>>>> Stashed changes
+		"ext-gd": "*",
+		"artdarek/oauth-4-laravel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
