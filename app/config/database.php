@@ -59,6 +59,13 @@ return array(
 			'database'  => 'izquote',
 			'username'  => 'root',
 			'password'  => 'root',
+
+
+			// 'host'      => 'izquote.com',
+			
+			// 'database'  => 'izquote_db',
+			// 'username'  => 'user_izquote',
+			// 'password'  => '481992',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

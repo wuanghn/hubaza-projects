@@ -10,16 +10,16 @@
     <meta name="author" content="">
 
     <!-- fb -->
-    @if(isset($post))
-        <meta property="og:url" content="{{url($post->slug)}}">
-        <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public')}}/{{$post->image}}">
-        <meta property="og:title" itemprop="headline" content="{{$post->title}}">
-        <meta property="og:description" content="{{$post->quote}}">
-    @else
+    @if(! $post)
         <meta property="og:url" content="{{url()}}">
         <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public/assets/img/image.png')}}">
         <meta property="og:title" itemprop="headline" content="IZquote · The coolest quote generator">
         <meta property="og:description" content="Create your own quote at: izquote.com">
+    @else
+        <meta property="og:url" content="{{url($post->slug)}}">
+        <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public')}}/{{$post->image}}">
+        <meta property="og:title" itemprop="headline" content="{{$post->title}}">
+        <meta property="og:description" content="{{$post->quote}}">
     @endif
 
 
@@ -33,6 +33,18 @@
 
     <!-- Custom CSS -->
     <link href="{{url()}}/public/layouts/default/css/blog-home.css" rel="stylesheet">
+
+
+
+    <!-- css by Duc Anh-->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="{{asset('public/assets/css/bootstrap-social.css')}}" rel="stylesheet">
+    <link href="{{asset('public/assets/css/style_da.css')}}" rel="stylesheet">
+
+
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -72,10 +84,16 @@
     <!-- jQuery -->
     <script src="{{url()}}/public/layouts/default/js/jquery.js"></script>
 
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> 
+
     <!-- Bootstrap Core JavaScript -->
     <script src="{{url()}}/public/layouts/default/js/bootstrap.min.js"></script>
 
     <script src="{{url()}}/public/layouts/default/js/rrssb.js"></script>
+
+    <script src="//connect.facebook.net/en_US/all.js"></script>
+    <script src="{{asset('public/assets/js/home.js')}}"></script>
 
 </body>
 

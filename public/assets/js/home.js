@@ -6,7 +6,7 @@ $(document).ready(function(){
         	
 
             skip = $('.col-md-6.div_content_center').last().attr('skip');
-            console.log(skip);
+            // console.log(skip);
 
             get_new(skip);
 
@@ -30,12 +30,12 @@ $(document).ready(function(){
                var html ='';
                html = '<div class="col-md-6 div_content_center" skip="'+data2['skip']+'">';
                html +=' <h3>';
-               html +=' <a href="#">'+data2['contents'][i]['title']+'</a>';
+               html +=' <a href="'+data2['contents'][i]['slug']+'">'+data2['contents'][i]['title']+'</a>';
                html +=' </h3>';
                html +=' <p class="lead">';
-               html +=' by <a href="index.php">'+data2['contents'][i]['id_user']+'</a>';
+               html +=' by <a href="index.php">'+data2['contents'][i]['fullname']+'</a>';
                html +=' </p>';
-               html +=' <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>';
+               html +=' <p><span class="glyphicon glyphicon-time"></span> Posted on '+data2['contents'][i]['created']+'</p>';
                html +='    <hr>';
                html +=' <img class="img-responsive" src="'+data2['contents'][i]['image']+'" alt="">';
                html +='<div class="da_fb_like">';
@@ -45,7 +45,7 @@ $(document).ready(function(){
                html +=' <a class="btn btn-social btn-twitter">';
                html +='   <i class="fa fa-twitter"></i>Twitter</a>';
 
-               html +='<input type="text" value="'+data2['contents'][i]['slug']+'" class="da_url">';
+               html +='<input type="text" value="'+data2['contents'][i]['slug']+'" class="da_url hidden">';
                html +='  </div>';
                html +=' </div>';
 
@@ -53,7 +53,7 @@ $(document).ready(function(){
            }
 
 
-           console.log(data2["skip"]);
+           // console.log(data2["skip"]);
        });
 }
 
@@ -65,18 +65,23 @@ $(document).on('click', '.da_fb_like .btn-facebook', function(){
     var pathname = window.location.hostname;
     url = $(this).parent().find('input.da_url').val();
 
-    full_url = pathname+'/'+url;
+    // full_url = 'http://'+pathname+'/'+url+'/';
+    full_url = url;
     
     share(full_url) ;
 })
 
 function share(url) {
-  FB.ui({
-    method: 'share',
-    href: url,
-  }, function(response){});
-}
+    FB.ui({
+        method: 'share',
+        href: url,
+    }, function(response){});
 
+
+
+
+
+}
 
 
 
