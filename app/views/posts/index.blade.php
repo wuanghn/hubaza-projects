@@ -48,7 +48,7 @@
 
         <!-- First Blog Post -->
         <h3>
-            <a href="{{asset('posts/'.$val->slug)}}">{{$val->title}}</a>
+            <a href="{{asset('post/'.$val->slug)}}">{{$val->title}}</a>
         </h3>
         <p class="lead">
             by <a href="index.php">{{$val->fullname}}</a>
@@ -65,12 +65,13 @@
                 app_id=828149473934812
                 &display=popup&caption= {{$val->title}}
                 &link={{url('posts')}}/{{$val->slug}}
-                &redirect_uri={{url('post/home')}}"
+                &redirect_uri={{url('post/home')}}">
 
-            >
               <i class="fa fa-facebook"></i>Facebook</a>
 
-              <a class="btn btn-social btn-twitter">
+
+
+              <a class="btn btn-social btn-twitter " href="https://twitter.com/intent/tweet?text=Hello%20world&count=none "data-size="large"">
                   <i class="fa fa-twitter"></i>Twitter</a>
 
                   <input type="text" value="{{$val->slug}}" class="da_url hidden"> 
@@ -118,8 +119,22 @@
 
 
 
-
-
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 
 
