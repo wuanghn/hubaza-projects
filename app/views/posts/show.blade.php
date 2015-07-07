@@ -32,7 +32,7 @@
  	         	                  <a href="https://www.facebook.com/dialog/feed?
   app_id=828149473934812
   &display=popup&caption= {{$post->title}}
-  &link=http://yeulamdep.org/lam-dep/thu-thach-yolo-selfie-cuc-chat-cua-gioi-tre-sai-thanh
+  &link={{$post->url_page}}
   &redirect_uri={{url()}}" class="popup">
  	         	                    <span class="rrssb-icon">
  	         	                      <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29">

@@ -11,6 +11,55 @@ class PostsController extends \BaseController
 
 
 
+
+
+	public function getLogout()
+	{
+		Session::forget('info_user');
+		return Redirect::to('/');
+	}
+
+
+
+	public function getLoginGg() {
+
+	    // get data from input
+	    $code = Input::get( 'code' );
+
+	    // get google service
+	    $googleService = OAuth::consumer( 'Google' );
+
+	    // check if code is valid
+
+	    // if code is provided get user data and sign in
+	    if ( !empty( $code ) ) {
+
+	        // This was a callback request from google, get the token
+	        $token = $googleService->requestAccessToken( $code );
+
+	        // Send a request with it
+	        $result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
+
+	        $info_user = Member::firstOrCreate(array('email' => $result['email'], 'fullname' => $result['name']));
+
+	        Session::put('info_user', $info_user);
+
+
+	        return Redirect::to('/');
+
+	    }
+	    // if not ask for permission first
+	    else {
+	        // get googleService authorization
+	        $url = $googleService->getAuthorizationUri();
+
+	        // return to google login url
+	        return Redirect::to( (string)$url );
+	    }
+	}
+
+
+
 	public function getLoginFb()
 	{
 		// get data from input
