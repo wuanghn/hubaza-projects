@@ -55,7 +55,7 @@
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Posted on {{$val->created}}</p>
         <hr>
-        <img class="img-responsive" src="{{url($val->image)}}" alt="">
+        <img class="img-responsive" src="{{url('public/'.$val->image)}}" alt="">
 
 
         <div class="da_fb_like">
@@ -63,9 +63,8 @@
 
               href="https://www.facebook.com/dialog/feed?
                 app_id=828149473934812
-                &display=popup&caption= {{$val->title}}
                 &link={{url('posts')}}/{{$val->slug}}
-                &redirect_uri={{url('post/home')}}">
+                &redirect_uri=http://izquote.com">
 
               <i class="fa fa-facebook"></i>Facebook</a>
 

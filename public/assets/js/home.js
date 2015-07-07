@@ -2,7 +2,8 @@ $(document).ready(function(){
 
 	 //scroll trang
     $(window).scroll(function() {
-        if($(window).scrollTop() + $(window).height()  == ($(document).height())) {
+        console.log($(window).scrollTop());
+        if($(window).scrollTop() + window.innerHeight  == ($(document).height())) {
         	
 
             skip = $('.col-md-6.div_content_center').last().attr('skip');
@@ -39,9 +40,9 @@ $(document).ready(function(){
                html +=' </p>';
                html +=' <p><span class="glyphicon glyphicon-time"></span> Posted on '+data2['contents'][i]['created']+'</p>';
                html +='    <hr>';
-               html +=' <img class="img-responsive" src="'+url +data2['contents'][i]['image']+'" alt="">';
+               html +=' <img class="img-responsive" src="'+url+'public/' +data2['contents'][i]['image']+'" alt="">';
                html +='<div class="da_fb_like">';
-               html +=' <a class="btn btn-social btn-facebook" href="https://www.facebook.com/dialog/feed?app_id=828149473934812&display=popup&caption= '+data2['contents'][i]['title']+'&link='+url+'/post/'+data2['contents'][i]['slug']+'&redirect_uri='+url+'post/home">';
+               html +=' <a class="btn btn-social btn-facebook" href="https://www.facebook.com/dialog/feed?app_id=828149473934812&link='+url+'/post/'+data2['contents'][i]['slug']+'&redirect_uri=http://izquote.com';
 
                html +=' <i class="fa fa-facebook"></i>Facebook</a>';
 

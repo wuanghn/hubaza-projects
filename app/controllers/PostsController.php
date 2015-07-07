@@ -8,7 +8,7 @@ class PostsController extends \BaseController
 	{
 		$content = DB::table('posts as post')
 		->leftjoin('members as mem', 'mem.id', '=', 'post.id_user')
-		->skip(0)->take(2)->orderBy('post.id', 'desc')
+		->skip(0)->take(5)->orderBy('post.id', 'desc')
 		->select('post.id', 'post.created', 'mem.fullname', 'post.title', 'post.image', 'post.slug')
 		->get();
 
@@ -31,7 +31,7 @@ class PostsController extends \BaseController
 
 
 	function getContents(){
-		$skip = intval(Input::get('skip')) +2;
+		$skip = intval(Input::get('skip')) +5;
 
 		$content = DB::table('posts as post')
 		->leftjoin('members as mem', 'mem.id', '=', 'post.id_user')
