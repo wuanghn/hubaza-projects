@@ -59,7 +59,7 @@
 
 
         <div class="da_fb_like">
-            <a class="btn btn-social btn-facebook" 
+            <a class="btn btn-social btn-facebook popup" 
 
               href="https://www.facebook.com/dialog/feed?
                 app_id=828149473934812
