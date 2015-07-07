@@ -20,7 +20,11 @@ class PostsController extends \BaseController
 
 	public function getCreate()
 	{
-		return View::make('posts.create');
+		if(Session::has('info_user'))
+			return View::make('posts.create');
+		else
+			return Redirect::to('/');
+		
 	}
 
 

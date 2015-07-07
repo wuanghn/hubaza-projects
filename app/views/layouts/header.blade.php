@@ -16,10 +16,10 @@
             <ul class="nav navbar-nav">
                 @if(Session::has('info_user'))
                 <li>
-                    <a href="#">Hi {{Session::get('info_user')->fullname}}!</a>
+                    <a href="{{url('logout')}}">Hi {{Session::get('info_user')->fullname}}!</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{url('create')}}">
                         <span class="btn btn-primary">Submit</span></a>
                 </li>
                 @else
@@ -27,7 +27,7 @@
                     <a data-toggle="modal" data-target="#myModal" href="#">Login</a>
                 </li>
                 <li>
-                    <a data-target="#myModal" href="#" href="#">
+                    <a data-toggle="modal" data-target="#myModal" href="#">
                         <span class="btn btn-primary">Submit</span></a>
                 </li>
                 @endif
@@ -48,10 +48,10 @@
         <h4 class="modal-title" id="myModalLabel">Login</h4>
     </div>
     <div class="modal-body">
-        <a class="btn btn-block btn-social btn-facebook">
+        <a class="btn btn-block btn-social btn-facebook" href="{{url('login-fb')}}">
             <i class="fa fa-facebook"></i> Sign in with Facebook
         </a>
-        <a class="btn btn-block btn-social btn-google">
+        <a class="btn btn-block btn-social btn-google" href="{{url('login-gg')}}">
             <i class="fa fa-google"></i> Sign in with Google
         </a>
     </div>
