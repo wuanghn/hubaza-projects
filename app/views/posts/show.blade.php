@@ -32,7 +32,7 @@
  	         	                  <a href="https://www.facebook.com/dialog/feed?
   app_id=828149473934812
   &display=popup
-  &display=popup&caption= {{$post->title}}
+  &display=popup&caption= izquote.com
   &link={{$post->url_page}}
   &redirect_uri={{url()}}">
  	         	                    <span class="rrssb-icon">
