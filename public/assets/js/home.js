@@ -79,11 +79,7 @@ function share(url) {
   },
   // callback
   function(response) {
-    if (response && !response.error_code) {
-      alert('Posting completed.');
-    } else {
-      alert('Error while posting.');
-    }
+    
   }
 );
 
