@@ -29,7 +29,7 @@ footer {
   border-radius: 3px;
 }
 .da_div_quote{
-	font-size: 24px;
+	font-size: 32px;
 	color: white;
 	position:absolute;
 	margin-left: auto;
@@ -40,7 +40,7 @@ footer {
 	text-align: center;
 }
 .da_div_author{
-	font-size: 24px;
+	font-size: 32px;
 	color: white;
 	position:absolute;
 	margin-top: 55%;
