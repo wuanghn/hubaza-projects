@@ -65,7 +65,7 @@
                 app_id=828149473934812
                 &display=popup&caption= {{$val->title}}
                 &link={{url('posts')}}/{{$val->slug}}
-                &redirect_uri=http://news.zing.vn/"
+                &redirect_uri={{url('post/home')}}"
 
             >
               <i class="fa fa-facebook"></i>Facebook</a>
