@@ -30,9 +30,12 @@ class PostsController extends \BaseController
 		        // Send a request with it
 		        $result = json_decode( $fb->request( '/me' ), true );
 
-		        echo $result['email']."-".$result['name'];
+		        $info_user = Member::firstOrCreate(array('email' => $result['email'], 'fullname' => $result['name']));
 
-		        Member::firstOrCreate(array('email' => $result['email'], 'fullname' => $result['name']));
+		        Session::put('info_user', $info_user);
+
+
+		        return Redirect::to('/');
 
 		    }
 		    // if not ask for permission first
@@ -52,7 +55,7 @@ class PostsController extends \BaseController
 		$post = Post::find($this->getLastId($slug));
 		if($post->slug == $slug)
 		{
-			$post->url_page = url($slug);
+			$post->url_page = url('posts/'.$slug);
 			$post->url_image = asset('public/'.$post->image);
 			$post_new = Post::orderBy('id','desc')->take(5)->get();
 			return View::make('posts.show',compact('post','post_new'));
@@ -93,6 +96,8 @@ class PostsController extends \BaseController
 	{
 		require app_path().'/start/boximage/Box.php';
 		require app_path().'/start/boximage/Color.php';
+
+		$user = Session::get('info_user');
 
 		//dd(Input::all());
 
@@ -156,9 +161,10 @@ class PostsController extends \BaseController
 
 		$post = Post::create([
 			"title" => Input::get('title'),
+			"quote" => Input::get('body'),
 			"image" => "uploads/store/$radomString.jpg",
 			"created" => $this->timenow(),
-			"id_user" => 7
+			"id_user" => $user->id
 		]);
 
 

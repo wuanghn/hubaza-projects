@@ -12,12 +12,19 @@
 */
 
 
+
+
+
+
+
 Route::controller('post','DucAnhController');
+
+Route::get('posts/{slug}','PostsController@detail');
 
 Route::controller('/','PostsController');
 
 // allway at bottom file
-Route::get('{slug}','PostsController@detail');
+
 
 
 
