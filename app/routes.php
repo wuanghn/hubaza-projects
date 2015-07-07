@@ -17,9 +17,9 @@
 
 
 
-Route::controller('post','DucAnhController');
+// Route::controller('post','DucAnhController');
 
-Route::get('posts/{slug}','PostsController@detail');
+Route::get('post/{slug}','PostsController@detail');
 
 Route::controller('/','PostsController');
 
