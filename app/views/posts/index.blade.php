@@ -4,24 +4,6 @@
 @section('content')
 
 <div class="row da_contents">
-	<div id="fb-root"></div>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '864324000326627',
-          status     : true,
-          xfbml      : true
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/all.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
 
         <!-- Blog Entries Column -->
         <div class="col-md-3 hidden">
@@ -77,7 +59,15 @@
 
 
         <div class="da_fb_like">
-            <a class="btn btn-social btn-facebook">
+            <a class="btn btn-social btn-facebook" 
+
+              href="https://www.facebook.com/dialog/feed?
+                app_id=828149473934812
+                &display=popup&caption= {{$val->title}}
+                &link={{url('posts')}}/{{$val->slug}}
+                &redirect_uri={{url()}}"
+
+            >
               <i class="fa fa-facebook"></i>Facebook</a>
 
               <a class="btn btn-social btn-twitter">

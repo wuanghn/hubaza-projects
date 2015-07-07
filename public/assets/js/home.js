@@ -61,27 +61,7 @@ $(document).ready(function(){
 //share FB
 
 
-$(document).on('click', '.da_fb_like .btn-facebook', function(){
-    var pathname = window.location.hostname;
-    url = $(this).parent().find('input.da_url').val();
 
-    // full_url = 'http://'+pathname+'/'+url+'/';
-    full_url = url;
-    
-    share(full_url) ;
-})
-
-function share(url) {
-    FB.ui(
-  {
-    method: 'share',
-    href: 'https://developers.facebook.com/docs/',
-  },
-  // callback
-  function(response) {
-    
-  }
-);
 
 
 
