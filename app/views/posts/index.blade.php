@@ -55,7 +55,7 @@
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Posted on {{$val->created}}</p>
         <hr>
-        <img class="img-responsive" src="{{$val->image}}" alt="">
+        <img class="img-responsive" src="{{url($val->image)}}" alt="">
 
 
         <div class="da_fb_like">
@@ -71,7 +71,7 @@
 
 
 
-              <a class="btn btn-social btn-twitter " href="https://twitter.com/intent/tweet?text=Hello%20world&count=none "data-size="large"">
+              <a class="btn btn-social btn-twitter " href="https://twitter.com/intent/tweet?url={{url('post').'/'.$val->slug}}&text={{$val->title}}&count=none "data-size="large">
                   <i class="fa fa-twitter"></i>Twitter</a>
 
                   <input type="text" value="{{$val->slug}}" class="da_url hidden"> 
