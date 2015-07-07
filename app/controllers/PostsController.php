@@ -139,7 +139,7 @@ class PostsController extends \BaseController
 		$post = Post::find($this->getLastId($slug));
 		if($post->slug == $slug)
 		{
-			$post->url_page = url('posts/'.$slug);
+			$post->url_page = url('post/'.$slug);
 			$post->url_image = asset('public/'.$post->image);
 			$post_new = Post::orderBy('id','desc')->take(5)->get();
 			return View::make('posts.show',compact('post','post_new'));
