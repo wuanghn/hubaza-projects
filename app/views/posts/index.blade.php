@@ -48,7 +48,7 @@
 
         <!-- First Blog Post -->
         <h3>
-            <a href="{{asset($val->slug)}}">{{$val->title}}</a>
+            <a href="{{asset('posts/'.$val->slug)}}">{{$val->title}}</a>
         </h3>
         <p class="lead">
             by <a href="index.php">{{$val->fullname}}</a>
@@ -115,35 +115,26 @@
 
 
 
+<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '828149473934812',
+          status     : true,
+          xfbml      : true
+        });
+      };
 
-<script>
-     window.fbAsyncInit = function() {
-    // init the FB JS SDK
-    FB.init({
-      appId      : '828149473934812', // App ID from the App Dashboard
-      channelUrl : 'http://izquote.com', // Channel File for x-domain communication
-      status     : true, // check the login status upon init?
-      cookie     : true, // set sessions cookies to allow your server to access the session?
-      xfbml      : true  // parse XFBML tags on this page?
-  });
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-    // Additional initialization code such as adding Event Listeners goes here
-
-};
-
- // Load the SDK Asynchronously
- function fb_callout() {
-   (function(d){
-       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement('script'); js.id = id; js.async = true;
-       js.src = "//connect.facebook.net/en_US/all.js";
-       ref.parentNode.insertBefore(js, ref);
-   }(document));
-}
-</script>
-
-
+ 
 
 
 

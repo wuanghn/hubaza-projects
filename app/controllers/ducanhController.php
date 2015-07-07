@@ -22,6 +22,7 @@ class DucAnhController extends \BaseController {
 		->get();
 
 		return View::make('posts.index', array('content' => $content));
+		
 	}
 
 	function getContents(){

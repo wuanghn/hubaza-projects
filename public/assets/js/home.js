@@ -30,7 +30,7 @@ $(document).ready(function(){
                var html ='';
                html = '<div class="col-md-6 div_content_center" skip="'+data2['skip']+'">';
                html +=' <h3>';
-               html +=' <a href="'+data2['contents'][i]['slug']+'">'+data2['contents'][i]['title']+'</a>';
+               html +=' <a href="post/'+data2['contents'][i]['slug']+'">'+data2['contents'][i]['title']+'</a>';
                html +=' </h3>';
                html +=' <p class="lead">';
                html +=' by <a href="index.php">'+data2['contents'][i]['fullname']+'</a>';
@@ -72,10 +72,20 @@ $(document).on('click', '.da_fb_like .btn-facebook', function(){
 })
 
 function share(url) {
-    FB.ui({
-        method: 'share',
-        href: url,
-    }, function(response){});
+    FB.ui(
+  {
+    method: 'share',
+    href: 'https://developers.facebook.com/docs/',
+  },
+  // callback
+  function(response) {
+    if (response && !response.error_code) {
+      alert('Posting completed.');
+    } else {
+      alert('Error while posting.');
+    }
+  }
+);
 
 
 

@@ -52,10 +52,12 @@
         <script src="{{url()}}/public/layouts/default/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="{{url()}}/public/layouts/default/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+     <script src="//connect.facebook.net/en_US/all.js"></script>
 
 </head>
 
 <body>
+
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -92,8 +94,13 @@
 
     <script src="{{url()}}/public/layouts/default/js/rrssb.js"></script>
 
-    <script src="//connect.facebook.net/en_US/all.js"></script>
+
+   
+   
     <script src="{{asset('public/assets/js/home.js')}}"></script>
+
+
+
 
 </body>
 
