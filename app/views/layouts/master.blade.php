@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="shortcut icon" href="{{url('public/icon-izquote.png')}}">
 
     <!-- fb -->
     @if(isset($post))
@@ -56,7 +57,16 @@
 
 </head>
 
+@if(Request::segment(1) =="" || Request::segment(1) == "/")
+<body style="background-color:#F4F4F4"> </body>
+
+
+    @else
 <body>
+
+
+@endif
+
 
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -98,6 +108,7 @@
    
    
     <script src="{{asset('public/assets/js/home.js')}}"></script>
+    <script src="{{asset('public/assets/js/post_da.js')}}"></script>
 
 
 

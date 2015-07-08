@@ -51,11 +51,11 @@
             <a href="{{asset('post/'.$val->slug)}}">{{$val->title}}</a>
         </h3>
         <p class="lead">
-            by <a href="index.php">{{$val->fullname}}</a>
+            by <a>{{$val->fullname}}</a>
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Posted on {{$val->created}}</p>
         <hr>
-        <img class="img-responsive" src="{{url('public/'.$val->image)}}" alt="">
+        <a href="{{asset('post/'.$val->slug)}}"><img class="img-responsive" src="{{url('public/'.$val->image)}}" alt=""></a>
 
 
         <div class="da_fb_like">
@@ -68,6 +68,8 @@
               <a class="btn btn-social btn-twitter " href="https://twitter.com/intent/tweet?url={{url('post').'/'.$val->slug}}&text={{$val->title}}&count=none "data-size="large">
                   <i class="fa fa-twitter"></i>Twitter</a>
 
+               <div class="fb-share-button" data-href="{{asset('post/'.$val->slug)}}" data-layout="button_count"></div>
+
                   <input type="text" value="{{$val->slug}}" class="da_url hidden"> 
               </div>
 
@@ -75,6 +77,8 @@
           </div>
 
           @endforeach
+
+          <div><p id="da_loading_ajax">Loading <img src="{{url('public/ajax-loader.gif')}}"></p></div>
 
 
 
@@ -141,6 +145,5 @@
 
 
 @stop
-<body style="background-color:#F4F4F4"> </body>
 
 
