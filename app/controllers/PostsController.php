@@ -35,7 +35,7 @@ class PostsController extends \BaseController
 
 		$content = DB::table('posts as post')
 		->leftjoin('members as mem', 'mem.id', '=', 'post.id_user')
-		->skip($skip)->take(2)->orderBy('post.id', 'desc')
+		->skip($skip)->take(5)->orderBy('post.id', 'desc')
 		->select('post.id', 'post.created', 'mem.fullname', 'post.title', 'post.image', 'post.slug')
 		->get();
 

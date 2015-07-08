@@ -59,12 +59,7 @@
 
 
         <div class="da_fb_like">
-            <a class="btn btn-social btn-facebook popup" 
-
-              href="https://www.facebook.com/dialog/feed?
-                app_id=828149473934812
-                &link={{url('posts')}}/{{$val->slug}}
-                &redirect_uri=http://izquote.com">
+            <a class="btn btn-social btn-facebook popup" href="https://www.facebook.com/dialog/feed?app_id=828149473934812&link={{url('post')}}/{{$val->slug}}&redirect_uri=http://izquote.com">
 
               <i class="fa fa-facebook"></i>Facebook</a>
 

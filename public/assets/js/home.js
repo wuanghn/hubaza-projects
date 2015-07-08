@@ -42,7 +42,7 @@ $(document).ready(function(){
                html +='    <hr>';
                html +=' <img class="img-responsive" src="'+url+'public/' +data2['contents'][i]['image']+'" alt="">';
                html +='<div class="da_fb_like">';
-               html +=' <a class="btn btn-social btn-facebook" href="https://www.facebook.com/dialog/feed?app_id=828149473934812&link='+url+'/post/'+data2['contents'][i]['slug']+'&redirect_uri=http://izquote.com';
+               html +=' <a class="btn btn-social btn-facebook" href="https://www.facebook.com/dialog/feed?app_id=828149473934812&link='+url+'post/'+data2['contents'][i]['slug']+'&redirect_uri=http://izquote.com"';
 
                html +=' <i class="fa fa-facebook"></i>Facebook</a>';
 
