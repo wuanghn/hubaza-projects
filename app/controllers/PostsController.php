@@ -20,7 +20,7 @@ class PostsController extends \BaseController
 
 	public function getCreate()
 	{
-		if(Session::has('info_user'))
+		if(Session::has('info_user') && Session::has('info_user')->banned == 0)
 			return View::make('posts.create');
 		else
 			return Redirect::to('/');

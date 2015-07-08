@@ -21,6 +21,13 @@
 
 Route::get('post/{slug}','PostsController@detail');
 
+Route::group(array('prefix' => 'admin'), function()
+{
+
+    Route::controller('member','MembersController');
+
+});
+
 Route::controller('/','PostsController');
 
 // allway at bottom file

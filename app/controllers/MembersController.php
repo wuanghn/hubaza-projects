@@ -1,86 +1,29 @@
 <?php
 
-class MembersController extends \BaseController {
+class MembersController extends \BaseController 
+{
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /members
-	 *
-	 * @return Response
-	 */
-	public function index()
+	public function getIndex()
 	{
-		//
+		$members = Member::paginate(15);
+		//return View::make('members.index');
+		return View::make('layouts.admin.master',compact('members'));
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /members/create
-	 *
-	 * @return Response
-	 */
-	public function create()
+
+
+	public function getDelete()
 	{
-		//
+		Member::find(1)->delete(Input::get('id'));
+		return Redirect::back();
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /members
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
 
-	/**
-	 * Display the specified resource.
-	 * GET /members/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /members/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
+	public function getBanned()
 	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /members/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /members/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+		Member::updateOrCreate(array('id' => Input::get('id')), array('banned' => Input::get('ban')));
+		return Redirect::back();
+	}	
 
 }

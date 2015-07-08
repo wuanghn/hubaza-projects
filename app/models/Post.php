@@ -5,4 +5,9 @@ class Post extends \Eloquent {
 	protected $table = "posts";
 	protected $guarded = array();
 
+	public function member()
+   {
+       return $this->belongsTo('Member');
+   }
+
 }
