@@ -124,7 +124,12 @@ word-wrap:break-word;
 .navbar-nav>li>a{
 	padding: 10px 10px;
 }
-
+.fb-share-button{
+	float: right;
+}
+.fb_iframe_widget{
+	margin-top: 5px !important;
+}
 
 
 
