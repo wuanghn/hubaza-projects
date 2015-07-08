@@ -24,6 +24,6 @@ class MembersController extends \BaseController
 	{
 		Member::updateOrCreate(array('id' => Input::get('id')), array('banned' => Input::get('ban')));
 		return Redirect::back();
-	}	
+	}
 
 }

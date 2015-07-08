@@ -88,3 +88,20 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+
+Route::filter('to_admin',function()
+{
+		if(Session::has('info_user'))
+		{
+			if(Session::get('info_user')->email != 'kelvin.timsach@gmail.com' || Session::get('info_user')->email != 'de.quang.co@gmail.com')
+			{
+				return Redirect::to('admin/members');
+			}
+		}
+		else
+		{
+			return Redirect::to('/');
+		}
+});

@@ -21,7 +21,7 @@
 
 Route::get('post/{slug}','PostsController@detail');
 
-Route::group(array('prefix' => 'admin'), function()
+Route::group(array('prefix' => 'admin','before' => 'to_admin'), function()
 {
 
     Route::controller('member','MembersController');
