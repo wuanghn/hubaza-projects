@@ -49,7 +49,7 @@
         <!-- First Blog Post -->
         <h3>
             <a href="{{asset('post/'.$val->slug)}}">{{$val->title}}</a>
-            @if(Session::has('info_user') && Session::get('info_user')->email='kelvin.timsach@gmail.com')
+            @if(Session::has('info_user') && Session::get('info_user')->email=='kelvin.timsach@gmail.com')
 
               <a href="{{url('del-post')}}?slug={{$val->slug}}" class="btn btn-danger">Delete</a>
 
