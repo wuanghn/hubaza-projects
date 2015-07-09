@@ -339,7 +339,9 @@ class PostsController extends \BaseController
 	public function getDelPostFromProfile()
 	{
 		if(Session::has('info_user'))
-		{
+		{ 
+			$post = Post::whereSlug(Input::get('slug'))->first();
+			unlink(public_path($post->image));
 			Post::where(
 				['slug'=>Input::get('slug'),'id_user'=>Session::get('info_user')->id])
 				->delete();

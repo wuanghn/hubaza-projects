@@ -16,7 +16,10 @@
   <ul class="nav navmenu-nav">
     @if(Session::has('info_user'))
     <li>
-        <a href="{{url('logout')}}" style="padding-top: 20px;">Hi {{Session::get('info_user')->fullname}}!</a>
+        <a href="{{url('profile')}}" style="padding-top: 20px;">Hi {{Session::get('info_user')->fullname}}!</a>
+    </li>
+    <li>
+        <a href="{{url('logout')}}" style="padding-top: 20px;">Logout</a>
     </li>
     <li>
         <a href="{{url('create')}}">
