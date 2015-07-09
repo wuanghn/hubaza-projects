@@ -1,5 +1,16 @@
 <!-- Navigation -->
 
+<?php
+    $value = '';
+   if(Session::has('info_user') && Session::get('info_user')->email=='kelvin.timsach@gmail.com')
+    $value = 'admin';
+        
+?>
+<input type="hidden" id="login_admin" value="{{$value}}"/>
+
+
+
+
 
 <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
   <ul class="nav navmenu-nav">
@@ -13,10 +24,10 @@
         </li>
         @else
         <li>
-            <a data-toggle="modal"  href="#" style="padding-top: 20px;">Login</a>
+            <a data-toggle="modal"  href="{{url('login')}}" style="padding-top: 20px;color:white">Login</a>
         </li>
         <li>
-            <a data-toggle="modal"  href="#">
+            <a data-toggle="modal"  href="{{url('login')}}">
                 <span class="btn btn-primary">Create</span></a>
             </li>
             @endif
@@ -54,6 +65,10 @@
             </ul>
         </div>
     </div>
+
+
+
+
 
 
 

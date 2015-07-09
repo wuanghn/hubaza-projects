@@ -1,24 +1,46 @@
-@extends('layouts.master')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url()}}/public/layouts/default/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url()}}/public/layouts/default/css/rrssb.css" />
+
+    <!-- Custom CSS -->
+  
 
 
-@section('content')
 
- <div class="row">
+    <!-- css by Duc Anh-->
 
-                <!-- Blog Entries Column -->
-                <form action="{{url('store')}}" method="post" enctype="multipart/form-data" id="da_form_post" >
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="{{asset('public/assets/css/bootstrap-social.css')}}" rel="stylesheet">
+    <link href="{{asset('public/assets/css/login.css')}}" rel="stylesheet">
 
-                    <!-- Blog Sidebar Widgets Column -->
-                    <div class="col-md-4">
+    <title>Login</title>
 
+  </head>
 
-                    </div>
-                </form>
+  <body>
+    <div class="container da_container">
+        <div class="row">
+          <div class="col-md-6 div_login_center">
+            <h2>Login</h2>
+            <div>
+              <a class="btn btn-block btn-social btn-facebook" href="http://localhost/hubaza/login-fb">
+                <i class="fa fa-facebook"></i> Sign in with Facebook
+            </a>
 
+             
+
+            <a class="btn btn-block btn-social btn-google" href="http://localhost/hubaza/login-gg">
+                <i class="fa fa-google"></i> Sign in with Google
+            </a>
             </div>
-
-
-@stop
-
-
-
+          </div>
+        </div>
+    </div>
+    
+  </body>
+</html>
