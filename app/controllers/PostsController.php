@@ -292,6 +292,7 @@ class PostsController extends \BaseController
 	public function getDelPost()
 	{
 		Post::where('slug',Input::get('slug'))->delete();
+		return Redirect::back();
 	}
 
 
