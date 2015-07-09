@@ -308,4 +308,47 @@ class PostsController extends \BaseController
 	}
 
 
+
+
+
+	public function getProfile()
+	{
+		if(Session::has('info_user'))
+		{
+			if($_SERVER['SERVER_NAME'] == 'localhost')
+			{
+				$id_user = 7;
+			}else
+			{
+				$id_user = Session::get('info_user')->id;
+			}
+
+			$posts = Post::whereId_user($id_user)->get();
+
+			return View::make('posts.profile',compact('posts'));
+		}else{
+			return Redirect::to('/');
+		}
+
+		
+	}
+
+
+
+
+	public function getDelPostFromProfile()
+	{
+		if(Session::has('info_user'))
+		{
+			Post::where(
+				['slug'=>Input::get('slug'),'id_user'=>Session::get('info_user')->id])
+				->delete();
+			return Redirect::back();
+		}else{
+			return Redirect::back();	
+		}
+		
+	}
+
+
 }
