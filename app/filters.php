@@ -95,10 +95,14 @@ Route::filter('to_admin',function()
 {
 		if(Session::has('info_user'))
 		{
-			if(Session::get('info_user')->email != 'kelvin.timsach@gmail.com' || Session::get('info_user')->email != 'de.quang.co@gmail.com')
-			{
-				return Redirect::to('admin/members');
-			}
+			return Redirect::to('admin/member');  
+			// if(Session::get('info_user')->email == 'kelvin.timsach@gmail.com' || Session::get('info_user')->email == 'de.quang.co@gmail.com')
+			// {
+			 	  
+			// }else{
+			// 	return Redirect::to('/');	
+                 
+   //          }
 		}
 		else
 		{
