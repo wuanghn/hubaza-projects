@@ -291,8 +291,11 @@ class PostsController extends \BaseController
 
 	public function getDelPost()
 	{
-		Post::where('slug',Input::get('slug'))->delete();
-		return Redirect::back();
+		if(Session::has('info_user') && Session::get('info_user')->email=='kelvin.timsach@gmail.com')
+		{
+			Post::where('slug',Input::get('slug'))->delete();
+			return Redirect::back();
+		}
 	}
 
 
