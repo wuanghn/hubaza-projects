@@ -11,6 +11,8 @@ $(document).ready(function(){
 
             get_new(skip);
 
+
+
             //alert("bottom!");
         }
     });
@@ -60,33 +62,21 @@ $(document).ready(function(){
            
 
 
-            $('#da_loading_ajax').hide();
+            
        });
+
+        // $('#da_loading_ajax').hide();
 }
 
 
 //share FB
 
+$('.navmenu ul li').click(function(){
+     $('#myModal').modal('show');
+   $('.offcanvas').offcanvas('hide');
 
-count_share("http://mp3.zing.vn/album/Em-La-Cua-Anh-Ho-Viet-Trung-Ho-Quang-Hieu/ZWZBBEAB.html?st=5");
-
-function count_share(URL){
-
-    
-    $.getJSON( 'http://graph.facebook.com/?id=' + URL, function( fbdata ) {
-        get_share(fbdata.shares);
-
-    });
-   
-
-
-}
-
-
-function get_share(count){
-   share = count;
-   console.log(share);
-}
+})
+  
 
 
 

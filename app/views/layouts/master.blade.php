@@ -12,15 +12,15 @@
 
     <!-- fb -->
     @if(isset($post))
-        <meta property="og:url" content="{{url($post->slug)}}">
-        <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public')}}/{{$post->image}}">
-        <meta property="og:title" itemprop="headline" content="{{$post->title}}">
-        <meta property="og:description" content="{{$post->quote}}">
+    <meta property="og:url" content="{{url($post->slug)}}">
+    <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public')}}/{{$post->image}}">
+    <meta property="og:title" itemprop="headline" content="{{$post->title}}">
+    <meta property="og:description" content="{{$post->quote}}">
     @else
-        <meta property="og:url" content="{{url()}}">
-        <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public/assets/img/image.png')}}">
-        <meta property="og:title" itemprop="headline" content="IZquote · The coolest quote generator">
-        <meta property="og:description" content="Create your own quote at: izquote.com">
+    <meta property="og:url" content="{{url()}}">
+    <meta property="og:image" itemprop="thumbnailUrl" content="{{asset('/public/assets/img/image.png')}}">
+    <meta property="og:title" itemprop="headline" content="IZquote · The coolest quote generator">
+    <meta property="og:description" content="Create your own quote at: izquote.com">
     @endif
 
 
@@ -45,6 +45,12 @@
 
 
 
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+
+
+
+
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,20 +58,31 @@
     <!--[if lt IE 9]>
         <script src="{{url()}}/public/layouts/default/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="{{url()}}/public/layouts/default/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-     <script src="//connect.facebook.net/en_US/all.js"></script>
+        <![endif]-->
+        <script src="//connect.facebook.net/en_US/all.js"></script>
 
-</head>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-@if(Request::segment(1) =="" || Request::segment(1) == "/")
-<body style="background-color:#F4F4F4"> </body>
+      ga('create', 'UA-63312596-4', 'auto');
+      ga('send', 'pageview');
+
+      </script>
+
+  </head>
+
+  @if(Request::segment(1) =="" || Request::segment(1) == "/")
+  <body style="background-color:#F4F4F4"> </body>
 
 
-    @else
-<body>
+  @else
+  <body>
 
 
-@endif
+    @endif
 
 
     <div id="fb-root"></div>
@@ -75,44 +92,47 @@
       js = d.createElement(s); js.id = id;
       js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3&appId=642172092538987";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+  }(document, 'script', 'facebook-jssdk'));</script>
 
-    @include('layouts.header')
+  @include('layouts.header')
 
-    <!-- Page Content -->
-    <div class="container">
+  <!-- Page Content -->
+  <div class="container">
 
-            <!-- start width row -->
-                <!-- example -->
+    <!-- start width row -->
+    <!-- example -->
                     <!-- <div class="row">
-                        </div> -->
-                        @yield('content')
+                </div> -->
+                @yield('content')
                 <!--\ example -->
-            <!--\ start width row -->
+                <!--\ start width row -->
 
-    </div>
-    <!-- /.container -->
+            </div>
+            <!-- /.container -->
 
-    <!-- jQuery -->
-    <script src="{{url()}}/public/layouts/default/js/jquery.js"></script>
-
-
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> 
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{url()}}/public/layouts/default/js/bootstrap.min.js"></script>
-
-    <script src="{{url()}}/public/layouts/default/js/rrssb.js"></script>
+            <!-- jQuery -->
+            <script src="{{url()}}/public/layouts/default/js/jquery.js"></script>
 
 
-   
-   
-    <script src="{{asset('public/assets/js/home.js')}}"></script>
-    <script src="{{asset('public/assets/js/post_da.js')}}"></script>
+            <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> 
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{{url()}}/public/layouts/default/js/bootstrap.min.js"></script>
+
+            <script src="{{url()}}/public/layouts/default/js/rrssb.js"></script>
+
+            <!-- Latest compiled and minified JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 
 
 
 
-</body>
+            <script src="{{asset('public/assets/js/home.js')}}"></script>
+            <script src="{{asset('public/assets/js/post_da.js')}}"></script>
 
-</html>
+
+
+
+        </body>
+
+        </html>
