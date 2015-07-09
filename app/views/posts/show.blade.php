@@ -1,23 +1,25 @@
 @extends('layouts.master')
 
+@section('title',$post->title)
+
 @section('content')
 
 <div class="row">
 
 	<div class="col-md-8 col-sm-6">
-		<div class="da_google_ad3">
- 	         	      	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
- 	         	      	<!-- freezee-head-banner -->
- 	         	      	<ins class="adsbygoogle"
- 	         	      	style="display:block"
- 	         	      	data-ad-client="ca-pub-4351575263209189"
- 	         	      	data-ad-slot="8127581552"
- 	         	      	data-ad-format="auto"></ins>
- 	         	      	<script>
- 	         	      	(adsbygoogle = window.adsbygoogle || []).push({});
- 	         	      	</script>
+		<div class="da_google_ad2_mobile">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- izquote-sidebar-mobile -->
+			<ins class="adsbygoogle"
+			style="display:block"
+			data-ad-client="ca-pub-4351575263209189"
+			data-ad-slot="3647214757"
+			data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 
- 	         	      </div>
+		</div>
 		<h1 class="page-header">
 			{{$post->title}}
 		</h1>
@@ -89,19 +91,20 @@
 
 
 
- 	         	      <div class="da_google_ad">
+ 	         	      <div class="da_google_ad2_destop">
  	         	      	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
- 	         	      	<!-- freezee-head-banner -->
+ 	         	      	<!-- izquote-sidebar-desktop -->
  	         	      	<ins class="adsbygoogle"
  	         	      	style="display:block"
  	         	      	data-ad-client="ca-pub-4351575263209189"
- 	         	      	data-ad-slot="8127581552"
+ 	         	      	data-ad-slot="9693748353"
  	         	      	data-ad-format="auto"></ins>
  	         	      	<script>
  	         	      	(adsbygoogle = window.adsbygoogle || []).push({});
  	         	      	</script>
 
  	         	      </div>
+ 	         	      
 
 
  	         	      <div class="fb-comments" data-width="100%" data-href="{{$post->url_page}}" data-numposts="1"></div>
@@ -112,18 +115,38 @@
 
  	         	  <!-- Blog Sidebar Widgets Column -->
  	         	  <div class="col-md-4 col-sm-6 sidebar_right">
- 	         	  	<div class="da_google_ad2">
+ 	         	  	<div class="da_google_ad_destop">
  	         	  		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
- 	         	  		<!-- freezee-head-banner -->
+ 	         	  		<!-- izquote-newsfeed-desktop -->
  	         	  		<ins class="adsbygoogle"
  	         	  		style="display:block"
  	         	  		data-ad-client="ca-pub-4351575263209189"
- 	         	  		data-ad-slot="8127581552"
+ 	         	  		data-ad-slot="9414546756"
+ 	         	  		data-ad-format="auto"></ins>
+ 	         	  		<script>
+ 	         	  		(adsbygoogle = window.adsbygoogle || []).push({});
+ 	         	  		</script>
+
+ 	         	  	</div>
+
+ 	         	  	<!-- moblie -->
+
+ 	         	  	<div class="da_google_ad_mobile">
+ 	         	  		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+ 	         	  		<!-- izquote-newsfeed-mobile -->
+ 	         	  		<ins class="adsbygoogle"
+ 	         	  		style="display:block"
+ 	         	  		data-ad-client="ca-pub-4351575263209189"
+ 	         	  		data-ad-slot="1891279951"
  	         	  		data-ad-format="auto"></ins>
  	         	  		<script>
  	         	  		(adsbygoogle = window.adsbygoogle || []).push({});
  	         	  		</script>
  	         	  	</div>
+
+
+
+
  	         	  	@foreach($post_new as $posts)
  	         	  	<a href="{{url('post/'.$posts->slug)}}">
  	         	  		<h4>{{$posts->title}}</h4>

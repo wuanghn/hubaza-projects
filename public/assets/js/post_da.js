@@ -104,10 +104,6 @@ $('#da_author').keyup(function(){
 $('#da_form_post').validate({
     rules: {
     // compound rule
-    body: {
-      required: true,
-      minlength: 3
-  },
   title: {
       required: true,
       minlength: 3

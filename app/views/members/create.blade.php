@@ -23,18 +23,24 @@
   </head>
 
   <body>
+    <nav>
+      <div class="container da_container_login">
+        <a class="navbar-brand" href="{{url()}}">IZquote</a>
+      </div>
+
+    </nav>
     <div class="container da_container">
         <div class="row">
           <div class="col-md-6 div_login_center">
             <h2>Login</h2>
             <div>
-              <a class="btn btn-block btn-social btn-facebook" href="http://localhost/hubaza/login-fb">
+              <a class="btn btn-block btn-social btn-facebook" href="{{url('login-fb')}}">
                 <i class="fa fa-facebook"></i> Sign in with Facebook
             </a>
 
              
 
-            <a class="btn btn-block btn-social btn-google" href="http://localhost/hubaza/login-gg">
+            <a class="btn btn-block btn-social btn-google" href="{{url('login-gg')}}">
                 <i class="fa fa-google"></i> Sign in with Google
             </a>
             </div>

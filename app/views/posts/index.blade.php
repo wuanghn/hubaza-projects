@@ -1,47 +1,12 @@
 @extends('layouts.master')
 
+@section('title','Izquote.com')
 
 @section('content')
 
 <div class="row da_contents">
 
-        <!-- Blog Entries Column -->
-        <div class="col-md-3 hidden">
-           <!-- Blog Categories Well -->
-           <div class="well">
-            <input type="text" class="btn btn-primary btn-block" value="Create a Post">
-            <div class="row">
-                <div class="col-lg-6">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Category Name</a>
-                        </li>
-                        <li><a href="#">Category Name</a>
-                        </li>
-                        <li><a href="#">Category Name</a>
-                        </li>
-                        <li><a href="#">Category Name</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                    <ul class="list-unstyled">
-                        <li><a href="#">Category Name</a>
-                        </li>
-                        <li><a href="#">Category Name</a>
-                        </li>
-                        <li><a href="#">Category Name</a>
-                        </li>
-                        <li><a href="#">Category Name</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.col-lg-6 -->
-            </div>
-            <!-- /.row -->
-        </div>
 
-    </div>
 
     @foreach($content as $key => $val)
     <div class="col-md-6 div_content_center" skip="0">
@@ -84,38 +49,6 @@
           @endforeach
 
           <div><p id="da_loading_ajax">Loading <img src="{{url('public/ajax-loader.gif')}}"></p></div>
-
-
-
-          <!-- Blog Sidebar Widgets Column -->
-          <div class="col-md-3 hidden">
-
-            <!-- Blog Search Well -->
-            <div class="well">
-                <h4>Blog Search</h4>
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-                <!-- /.input-group -->
-            </div>
-
-
-
-            <!-- Side Widget Well -->
-            <div class="well">
-                <h4>Side Widget Well</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-            </div>
-            <div class="well">
-                <p>Copyright &copy; Your Website 2015</p>
-            </div>
-
-        </div>
 
     </div>
     <!-- /.row -->

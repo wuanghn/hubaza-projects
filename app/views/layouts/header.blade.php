@@ -43,7 +43,7 @@
         <span class="icon-bar"></span>
     </button>
     <div class="container">
-        <a class="navbar-brand" href="http://izquote.com">IZquote</a>
+        <a class="navbar-brand" href="{{url()}}">IZquote</a>
       <ul class="da_navmenu-nav">
         @if(Session::has('info_user'))
         <li>
