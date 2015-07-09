@@ -125,7 +125,7 @@ word-wrap:break-word;
 	padding: 10px 10px;
 }
 .da_fb_like .fb-share-button{
-	float: right;
+	margin-left: 40%;
 }
 .da_navmenu-nav{
 	list-style: none;
@@ -164,6 +164,15 @@ word-wrap:break-word;
 
 
 
+@media (max-width: 1200px) {
+.da_fb_like .fb-share-button{
+	margin-left: 30%;
+}
+
+}
+
+
+
 
 
 
@@ -199,6 +208,26 @@ word-wrap:break-word;
 	background-color: #221F1F;
 }
 
+
+}
+
+
+
+
+
+@media (max-width: 480px) {
+.da_fb_like .fb-share-button{
+	margin-left: 25%;
+}
+
+}
+
+
+
+@media (max-width: 320px) {
+.da_fb_like .fb-share-button{
+	margin-left: 20px;
+}
 
 }
 

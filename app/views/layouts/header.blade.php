@@ -9,7 +9,7 @@
     </li>
     <li>
         <a href="{{url('create')}}">
-            <span class="btn btn-primary">Submit</span></a>
+            <span class="btn btn-primary">Create</span></a>
         </li>
         @else
         <li>
@@ -17,7 +17,7 @@
         </li>
         <li>
             <a data-toggle="modal"  href="#">
-                <span class="btn btn-primary">Submit</span></a>
+                <span class="btn btn-primary">Create</span></a>
             </li>
             @endif
         </ul>
@@ -40,7 +40,7 @@
         </li>
         <li>
             <a href="{{url('create')}}">
-                <span class="btn btn-primary">Submit</span></a>
+                <span class="btn btn-primary">Create</span></a>
             </li>
             @else
             <li>
@@ -48,12 +48,11 @@
             </li>
             <li>
                 <a data-toggle="modal" data-target="#myModal" href="#">
-                    <span class="btn btn-primary">Submit</span></a>
+                    <span class="btn btn-primary">Create</span></a>
                 </li>
                 @endif
             </ul>
         </div>
-
     </div>
 
 
