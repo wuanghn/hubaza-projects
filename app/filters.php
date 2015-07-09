@@ -93,9 +93,9 @@ Route::filter('csrf', function()
 
 Route::filter('to_admin',function()
 {
-		if(Session::has('info_user'))
+		if(! Session::has('info_user'))
 		{
-			return Redirect::to('admin/member');  
+			return Redirect::to('/');  
 			// if(Session::get('info_user')->email == 'kelvin.timsach@gmail.com' || Session::get('info_user')->email == 'de.quang.co@gmail.com')
 			// {
 			 	  
@@ -103,9 +103,5 @@ Route::filter('to_admin',function()
 			// 	return Redirect::to('/');	
                  
    //          }
-		}
-		else
-		{
-			return Redirect::to('/');
 		}
 });

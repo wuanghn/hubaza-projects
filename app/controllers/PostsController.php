@@ -295,4 +295,13 @@ class PostsController extends \BaseController
 	}
 
 
+
+
+
+	public function getLogin()
+	{
+		return View::make('members/create');
+	}
+
+
 }
