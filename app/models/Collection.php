@@ -1,5 +1,6 @@
 <?php
 
 class Collection extends \Eloquent {
-	protected $fillable = [];
+	protected $table = "collections";
+	protected $guarded = array();
 }

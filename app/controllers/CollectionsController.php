@@ -16,4 +16,11 @@ class CollectionsController extends \BaseController {
 		}
 	}
 
+
+
+	public function addNewCollect()
+	{
+		// 
+	}
+
 }
