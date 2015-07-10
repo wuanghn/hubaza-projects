@@ -22,7 +22,7 @@
 		</div>
 		<h1 class="page-header">
 			{{$post->title}}
-			<input type="hidden" value="{{$post->slug}}" id="slug_post">
+			<input type="hidden" value="{{$post->id}}" id="id_post">
 		</h1>
 
 		<div>
@@ -204,7 +204,6 @@
 </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" id="submit_collect">Submit</button>
       </div>
     </div>

@@ -118,14 +118,14 @@ $('#submit_collect').click(function(){
 
     dropdown_collect = $('#opt_collection').val();
     name = $('#name_collection').val();
-    slug = $('#slug_post').val();
+    id = $('#id_post').val();
 
     //gui ajax
 
     $.get( "contents", {
             dropdown_collect: dropdown_collect,
             name :name,
-            slug:slug
+            id:id
 
         } ).done(function( data ) {
             data2 = JSON.parse(data);
