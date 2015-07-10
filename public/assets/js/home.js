@@ -62,6 +62,7 @@ $(document).ready(function(){
                  html +='  </div>';
                  html +=' </div>';
 
+
                  $('.da_contents').find('.col-md-6').last().after(html);
                  FB.XFBML.parse();
              }
@@ -72,11 +73,18 @@ $(document).ready(function(){
 
      });
 
-        // $('#da_loading_ajax').hide();
     }
 
 
-//share FB
+
+
+
+//pop up collection
+
+$('#list_collection').click(function(){
+
+   $('#name_collection').val('');
+})
 
 
 

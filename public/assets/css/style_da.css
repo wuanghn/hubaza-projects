@@ -162,6 +162,26 @@ word-wrap:break-word;
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
 	color: white;
 }
+.da_google_ad4_destop{
+	/*width: 50%;*/
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+
+}
+.da_google_ad4_mobile{
+	display: none;
+}
+.da_add_collection{
+	display: inline;
+	margin-left: 20px;
+}
+
+
+
+
 
 
 
@@ -182,11 +202,19 @@ word-wrap:break-word;
 
 
 @media (max-width: 768px) {
-	.da_hidden_respon, .da_google_ad_destop, .da_google_ad2_destop{
+	.da_hidden_respon, .da_google_ad_destop, .da_google_ad2_destop, .da_google_ad4_destop{
 		display: none;
 	}
-	.da_div_change_image, .da_google_ad_mobile, .da_google_ad2_mobile{
+	.da_div_change_image, .da_google_ad_mobile, .da_google_ad2_mobile, .da_google_ad4_mobile{
 		display: block;
+	}
+	.da_google_ad4_mobile{
+		/*width: 320px;*/
+		margin-right: auto;
+		margin-left: auto;
+		float: none;
+		padding-bottom: 10px;
+
 	}
 
 	.rrssb-buttons{

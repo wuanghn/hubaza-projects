@@ -28,6 +28,9 @@
 			<span style="float:right">{{$post->created}}</span>
 			<!-- <div class="fb-send" data-href="https://developers.facebook.com/docs/plugins/"></div> -->
 			<div class="fb-share-button" data-href="{{$post->url_page}}" data-layout="button_count"></div>
+			<div class="da_add_collection">
+				<a class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Create Collection</a>
+			</div>
 
 		</div>
 
@@ -157,5 +160,55 @@
  	         	  </div>
 
  	         	</div>
+
+
+
+ 	         	<!-- Button trigger modal -->
+
+<!-- Modal -->
+<form method="post" action="#">
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Collection</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active" id="list_collection"><a href="#your_collection" aria-controls="your_collection" role="tab" data-toggle="tab">List your collection</a></li>
+    <li role="presentation"><a href="#add_collection" aria-controls="add_collection" role="tab" data-toggle="tab">Add new collection</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="your_collection">
+    	<select class="form-control" style="margin-top:30px" name="collection">
+    		<option value="default">Default</option>
+    	</select>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="add_collection">
+    	<div class="form-group" style="margin-top:30px">
+    		<label>Name Collection</label>
+    		<input type="text" class="form-control" name="name_collection" id="name_collection">
+    	</div>
+    </div>
+    
+  </div>
+
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+<form>
  	         	<!-- /.row -->
  	         	@stop
