@@ -28,6 +28,8 @@ Route::group(array('prefix' => 'admin','before' => 'to_admin'), function()
 
 });
 
+Route::controller('collect','CollectionsController');
+
 Route::controller('/','PostsController');
 
 // allway at bottom file
