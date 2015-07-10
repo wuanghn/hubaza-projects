@@ -107,13 +107,13 @@ $('#list_collection').click(function(){
 function notify(){
     $(".pos-demo").notify(
       "I'm left of the box", 
-      { position:"right" }
+      { position:"right",className:'success'}
       );
 
 }
 
 
-
+notify();
 $('#submit_collect').click(function(){
 
     dropdown_collect = $('#opt_collection').val();
