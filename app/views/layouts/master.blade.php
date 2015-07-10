@@ -116,6 +116,8 @@
             <!-- jQuery -->
             <script src="{{url()}}/public/layouts/default/js/jquery.js"></script>
 
+            <script src="{{url()}}/public/assets/js/notify.js"></script>
+
 
             <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script> 
 

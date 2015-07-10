@@ -87,6 +87,12 @@ $('#list_collection').click(function(){
 })
 
 
+$(".pos-demo").notify(
+  "I'm left of the box", 
+  { position:"left" }
+);
+
+
 
 
 
