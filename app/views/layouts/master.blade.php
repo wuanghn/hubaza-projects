@@ -30,6 +30,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{url()}}/public/layouts/default/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- css layout collection -->
+     <link rel="stylesheet" href="{{url()}}/public/assets/css/3-col-portfolio.css" />
+
     <link rel="stylesheet" href="{{url()}}/public/layouts/default/css/rrssb.css" />
 
     <!-- Custom CSS -->
