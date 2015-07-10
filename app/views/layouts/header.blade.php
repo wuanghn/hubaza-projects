@@ -22,9 +22,9 @@
         <a href="{{url('logout')}}" style="padding-top: 20px;">Logout</a>
     </li>
     <li>
-        <a href="{{url('create')}}">
-            <span class="btn btn-primary">Create</span></a>
-        </li>
+    <a href="{{url('create')}}">
+        <span class="btn btn-primary">Create</span></a>
+    </li>
         @else
         <li>
             <a data-toggle="modal"  href="{{url('login')}}" style="padding-top: 20px;color:white">Login</a>
@@ -50,8 +50,12 @@
       <ul class="da_navmenu-nav">
         @if(Session::has('info_user'))
         <li>
-            <a href="{{url('logout')}}" style="padding-top: 20px;">Hi {{Session::get('info_user')->fullname}}!</a>
+        <a href="{{url('profile')}}" style="padding-top: 20px;">Hi {{Session::get('info_user')->fullname}}!</a>
         </li>
+        <li style="margin-top: 5px; margin-right: 20px;">
+            <a href="{{url('logout')}}" style="padding-top: 20px;">Logout</a>
+        </li>
+        <li>
         <li>
             <a href="{{url('create')}}">
                 <span class="btn btn-primary">Create</span></a>

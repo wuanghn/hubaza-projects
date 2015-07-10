@@ -1,0 +1,1 @@
+/Applications/MAMP/htdocs/izquote/app/views/collections/edit.blade.php
