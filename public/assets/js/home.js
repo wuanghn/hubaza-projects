@@ -87,10 +87,15 @@ $('#list_collection').click(function(){
 })
 
 
+
+$('#da_pos-demo').click(function(){
 $(".pos-demo").notify(
   "I'm left of the box", 
-  { position:"left" }
+  { position:"right" }
 );
+
+})
+
 
 
 

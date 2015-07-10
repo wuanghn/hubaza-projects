@@ -29,10 +29,11 @@
 			<!-- <div class="fb-send" data-href="https://developers.facebook.com/docs/plugins/"></div> -->
 			<div class="fb-share-button" data-href="{{$post->url_page}}" data-layout="button_count"></div>
 			<div class="da_add_collection">
-				<a class="btn btn-success" data-toggle="modal" data-target="#myModal2">Add to Collection</a>
+				<a class="btn btn-success pos-demo" data-toggle="modal" data-target="#myModal2">Add to Collection</a>
 			</div>
 
 		</div>
+		<input id="da_pos-demo" type="button" value="fuck you">
 
 		<div style="text-align:center" class="da_img_content">
 			<hr/>
