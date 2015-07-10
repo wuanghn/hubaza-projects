@@ -22,6 +22,7 @@
 		</div>
 		<h1 class="page-header">
 			{{$post->title}}
+			<input type="hidden" value="{{$post->slug}}" id="slug_post">
 		</h1>
 
 		<div>
@@ -33,7 +34,6 @@
 			</div>
 
 		</div>
-		<input id="da_pos-demo" type="button" value="fuck you">
 
 		<div style="text-align:center" class="da_img_content">
 			<hr/>
@@ -187,7 +187,7 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="your_collection">
-    	<select class="form-control" style="margin-top:30px" name="collection">
+    	<select class="form-control" style="margin-top:30px" id="opt_collection">
     		<option value="default">Default</option>
     	</select>
     </div>
@@ -205,7 +205,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="submit_collect">Submit</button>
       </div>
     </div>
   </div>
