@@ -8,7 +8,7 @@ class CollectionsController extends \BaseController {
 	}
 
 
-	public function getStore()
+	public function postStore()
 	{
 		// get id user
 		if($_SERVER['SERVER_NAME'] == 'localhost')

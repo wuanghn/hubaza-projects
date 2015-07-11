@@ -96,55 +96,6 @@ $(document).ready(function(){
 
 
 
-<<<<<<< HEAD
-$('#list_collection').click(function(){
-
-   $('#name_collection').val('');
-})
-
-
-
-function notify(){
-    $(".pos-demo").notify(
-      "I'm left of the box", 
-      { position:"right",className:'success'}
-      );
-
-}
-
-$('#submit_collect').click(function(){
-
-    dropdown_collect = $('#opt_collection').val();
-    name = $('#name_collection').val();
-    id = $('#id_post').val();
-
-    echo = dropdown_collect +'--'+ name +'--'+ id;
-    
-    console.log(echo);
-
-    notify();
-    //gui ajax
-
-    // $.get( "contents", {
-    //         dropdown_collect: dropdown_collect,
-    //         name :name,
-    //         id:id
-
-    //     } ).done(function( data ) {
-    //         data2 = JSON.parse(data);
-            
-    //         //hiển thị thông báo
-    //     });
-
-})
-=======
->>>>>>> origin/master
-
-
-
-
-
-
 
 
 
