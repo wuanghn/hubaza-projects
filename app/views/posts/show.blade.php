@@ -210,5 +210,11 @@
   </div>
 </div>
 <form>
+
+@section('script')
+<script src="{{asset('public/assets/js/collection.js')}}"></script>
+@stop
+
+
  	         	<!-- /.row -->
  	         	@stop
