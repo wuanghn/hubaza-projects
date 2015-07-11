@@ -133,10 +133,10 @@
 
 
 
-            <script src="{{asset('public/assets/js/home.js')}}"></script>
+           
             <script src="{{asset('public/assets/js/post_da.js')}}"></script>
 
-
+             @yield('script')
 
 
         </body>
