@@ -188,7 +188,7 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="your_collection">
     	<select class="form-control" style="margin-top:30px" id="opt_collection">
-    		<option value="default">Default</option>
+    		<option value="0">Default</option>
     	</select>
     </div>
 
