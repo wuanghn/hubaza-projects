@@ -121,7 +121,9 @@
 
 
 
-
+ @section('script')
+<script src="{{asset('public/assets/js/home.js')}}"></script>
+@stop
 
 
 

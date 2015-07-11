@@ -95,8 +95,8 @@ $(document).ready(function(){
 
 
 
-//pop up collection
 
+<<<<<<< HEAD
 $('#list_collection').click(function(){
 
    $('#name_collection').val('');
@@ -137,6 +137,8 @@ $('#submit_collect').click(function(){
     //     });
 
 })
+=======
+>>>>>>> origin/master
 
 
 
