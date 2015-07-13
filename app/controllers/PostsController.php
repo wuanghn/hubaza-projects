@@ -157,6 +157,11 @@ class PostsController extends \BaseController
 
 
 
+	// get data collect for user
+
+
+
+
 	public function getTestImage()
 	{
 		// Create a 55x30 image

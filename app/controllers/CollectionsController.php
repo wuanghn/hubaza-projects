@@ -43,11 +43,32 @@ class CollectionsController extends \BaseController {
 		// have id collect & idpost [$collect_id,$id]
 		$id_post = Input::get('id');
 
-
-		DB::table('collects')->insert(['id_post' => $id_post,'id_collects' => $collect_id]);
-
-		echo "done";
+		$check_exist = $this->check_exist_data($id_post,$collect_id);
+		if($check_exist == true)
+		{
+			DB::table('collect_post')->insert(['id_post' => $id_post,'id_collects' => $collect_id]);
+		}
 	}
+
+
+
+
+	public function check_exist_data($id_post,$collect_id)
+	{
+		$user_favorites = DB::table('collect_post')
+		    ->where('id_post', '=', $id_post)
+		    ->where('id_collects', '=', $collect_id)
+		    ->first();
+
+		if (is_null($user_favorites)) {
+		    // It does not exist - add to favorites button will show
+		    return true;
+		} else {
+		    // It exists - remove from favorites button will show
+		    return false;
+		}
+	}
+
 
 
 
