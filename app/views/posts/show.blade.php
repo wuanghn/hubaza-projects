@@ -191,6 +191,9 @@
               <div role="tabpanel" class="tab-pane active" id="your_collection">
                <select class="form-control" style="margin-top:30px" id="opt_collection">
                 <option value="0">Default</option>
+                @foreach($collects as $collect)
+                  <option value="{{$collect->id}}">{{$collect->name}}</option>
+                @endforeach
               </select>
             </div>
 

@@ -147,7 +147,8 @@ class PostsController extends \BaseController
 			$post->url_page = url('post/'.$slug);
 			$post->url_image = asset('public/'.$post->image);
 			$post_new = Post::orderBy('id','desc')->take(5)->get();
-			return View::make('posts.show',compact('post','post_new'));
+			$collects = $this->listCollect();
+			return View::make('posts.show',compact('post','post_new','collects'));
 		}else
 		{
 			return Redirect::to('/');
@@ -158,6 +159,17 @@ class PostsController extends \BaseController
 
 
 	// get data collect for user
+	public function listCollect()
+	{
+		if($_SERVER['SERVER_NAME'] == 'localhost')
+		{
+			$id_user = 7;
+		}else
+		{
+			$id_user = Session::get('info_user')->id;
+		}
+		return Collection::whereId_user($id_user)->get();
+	}
 
 
 
@@ -215,7 +227,7 @@ class PostsController extends \BaseController
 
 			$filename = public_path("uploads/default/$radomString.jpg");
 
-			Image::make(Input::file('image')->getRealPath())->resize($width,$height)->colorize(-20, -20, -20)->save($filename);
+			Image::make(Input::file('image')->getRealPath())->resize($width,$height)->save($filename);
 
 			$im = imagecreatefromjpeg($filename);
 
