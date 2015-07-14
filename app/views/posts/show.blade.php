@@ -112,7 +112,7 @@
  	         	      </div>
  	         	      
 
-
+                  <div><p class="da_comment">Comments<p></div>
  	         	      <div class="fb-comments" data-width="100%" data-href="{{$post->url_page}}" data-numposts="1"></div>
 
 
