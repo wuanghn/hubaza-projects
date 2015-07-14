@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','Izquote.com')
+@section('title','Loiyeuthuong.co')
 
 @section('content')
 

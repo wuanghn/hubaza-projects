@@ -22,7 +22,7 @@ class CollectionsController extends \BaseController {
 			->first();
 
 			if(count($img) == 0)
-				$key->image = asset('public/default_collection.jpg');
+				$key->image = 'default_collection.jpg';
 			else
 				$key->image = $img->image;
 		}

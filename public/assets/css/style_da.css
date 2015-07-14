@@ -200,6 +200,28 @@ word-wrap:break-word;
 	max-height: 205px;
 	width: 100%;
 }
+#da_logo{
+
+}
+.logo_mobile{
+	display: none !important;
+}
+.logo_destop{
+	height: 34px !important;
+	padding: 3px 5px;
+}
+.offcanvas ul li a{
+	color: white !important;
+}
+.da_dropdown_menu li a{
+	color: #222;
+}
+
+
+
+
+
+
 
 
 
@@ -223,6 +245,15 @@ word-wrap:break-word;
 
 
 @media (max-width: 768px) {
+	.logo_destop{
+		display: none !important; 
+	}
+	.logo_mobile{
+		display: block !important;
+		height: 22px;
+	}
+
+
 	.da_hidden_respon, .da_google_ad_destop, .da_google_ad2_destop, .da_google_ad4_destop{
 		display: none;
 	}

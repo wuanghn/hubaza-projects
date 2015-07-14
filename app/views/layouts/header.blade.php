@@ -16,18 +16,29 @@
   <ul class="nav navmenu-nav">
     @if(Session::has('info_user'))
     <li>
-        <a href="{{url('profile')}}" style="padding-top: 20px;">Hi {{Session::get('info_user')->fullname}}!</a>
+        <a href="">Hi {{Session::get('info_user')->fullname}}!</a>
     </li>
+
     <li>
-        <a href="{{url('logout')}}" style="padding-top: 20px;">Logout</a>
+        <a href="{{url('profile')}}"><i class="fa fa-user"></i> My Profile</a>
     </li>
+
     <li>
-    <a href="{{url('create')}}">
-        <span class="btn btn-primary">Create</span></a>
+        <a href="{{url('collect')}}"><i class="fa fa-skyatlas"></i> My Collection</a>
     </li>
+    
+    <li>
+    <a href="{{url('create')}}"><i class="fa fa-plus"></i> Create</a>
+    </li>
+
+
+    <li>
+        <a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a>
+    </li>
+
         @else
         <li>
-            <a data-toggle="modal"  href="{{url('login')}}" style="padding-top: 20px;color:white">Login</a>
+            <a data-toggle="modal"  href="{{url('login')}}" style="padding-top: 20px;color:white"><i class="fa fa-sign-in"></i> Login</a>
         </li>
         <li>
             <a data-toggle="modal"  href="{{url('login')}}">
@@ -39,22 +50,38 @@
 
 
 
+
     <div class="navbar navbar-default navbar-fixed-top">
-      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+      <a type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-    </button>
+    </a>
     <div class="container">
-        <a class="navbar-brand" href="{{url()}}">IZquote</a>
+        <a class="navbar-brand" href="{{url()}}" id="da_logo">
+            <img src="{{asset('public/logo-desktop.png')}}" class="logo_destop">
+            <img src="{{asset('public/logo-mobile.png')}}" class="logo_mobile">
+        </a>
       <ul class="da_navmenu-nav">
         @if(Session::has('info_user'))
+        
         <li>
-        <a href="{{url('profile')}}" style="padding-top: 20px;">Hi {{Session::get('info_user')->fullname}}!</a>
+            <div class="dropdown">
+          <a href="#" class=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Hi {{Session::get('info_user')->fullname}}!
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu da_dropdown_menu" aria-labelledby="dropdownMenu1">
+            <li><a href="{{url('profile')}}"><i class="fa fa-user"></i> My Profile</a></li>
+            <li><a href="{{url('collect')}}"><i class="fa fa-skyatlas"></i> My Collection</a></li>
+            <li><a href="{{url('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
+          </ul>
+        </div>
+        <!-- <a href="{{url('profile')}}" style="padding-top: 20px;">Hi {{Session::get('info_user')->fullname}}!</a> -->
         </li>
-        <li style="margin-top: 5px; margin-right: 20px;">
+        <!-- <li style="margin-top: 5px; margin-right: 20px;">
             <a href="{{url('logout')}}" style="padding-top: 20px;">Logout</a>
-        </li>
+        </li> -->
         <li>
         <li>
             <a href="{{url('create')}}">
