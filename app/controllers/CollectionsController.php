@@ -81,7 +81,11 @@ class CollectionsController extends \BaseController {
 		->where('colp.id', $id)
 		->where('col.id', $id_collect)
 		->where('col.id_user', $id_user)
-		->delete();
+		->first();
+
+		if(count($post) ==1){
+			DB::table('collect_post')->where('id', $id)->delete();
+		}
 
 
 		return Redirect::to('collect/detail/'.$id_collect);
