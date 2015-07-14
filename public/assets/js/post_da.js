@@ -133,6 +133,14 @@ function vitri(height){
 }
 
 
+$('#da_filter').click(function(){
+  if(this.checked)
+        $('.da_backgroup').css('background-color', 'rgba(19, 17, 17, 0.28)');
+    else
+      $('.da_backgroup').attr('style', 'background-color:none');
+  
+})
+
 
 
 
