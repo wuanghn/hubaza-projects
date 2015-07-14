@@ -76,9 +76,11 @@ class CollectionsController extends \BaseController {
 		$id_user = Session::get('info_user')->id;
 		// var_dump($id);die;
 
-		$post = DB::table('collect_post')
-		->where('id', $id)
-		->where('id_collects', $id_collect)
+		$post = DB::table('collect_post as colp')
+		->join('collections as col', 'col.id', '=', 'colp.id_collects')
+		->where('colp.id', $id)
+		->where('col.id', $id_collect)
+		->where('col.id_user', $id_user)
 		->delete();
 
 
