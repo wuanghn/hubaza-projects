@@ -26,7 +26,7 @@
            
                 </div>
                 <a href="{{url('collect/detail').'/'.$val->id}}">
-                    <img class="img-responsive" src="{{asset($val->image)}}" alt="">
+                    <img class="img-responsive" src="{{asset('public/'.$val->image)}}" alt="">
                 </a>
 
                 <h4>

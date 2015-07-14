@@ -25,7 +25,7 @@
 
             	</div>
                 <a href="{{url('post').'/'.$val->slug}}">
-                    <img class="img-responsive" src="{{url($val->image)}}" alt="">
+                    <img class="img-responsive" src="{{url('public/'.$val->image)}}" alt="">
                 </a>
                 <h3>
                     <a href="{{url('post').'/'.$val->slug}}">@if(strlen($val->title) >=70){{substr($val->title,0,70).'...'}}
