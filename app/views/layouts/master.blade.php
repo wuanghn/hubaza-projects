@@ -74,7 +74,13 @@
       ga('send', 'pageview');
 
       </script>
+
        -->
+       <script type="text/javascript">
+    if (window.location.hash && window.location.hash == '#_=_') {
+       window.location = window.location.href.replace(/#.*/, '');
+    }
+</script>
 
   </head>
 
