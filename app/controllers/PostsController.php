@@ -148,6 +148,8 @@ class PostsController extends \BaseController
 			$post->url_image = asset('public/'.$post->image);
 			$post_new = Post::orderBy('id','desc')->take(5)->get();
 			$collects = $this->listCollect();
+
+			// var_dump($collects);die;
 			return View::make('posts.show',compact('post','post_new','collects'));
 		}else
 		{
@@ -163,7 +165,7 @@ class PostsController extends \BaseController
 	{
 		if($_SERVER['SERVER_NAME'] == 'localhost')
 		{
-			$id_user = 7;
+			$id_user = 3;
 		}else
 		{
 			$id_user = Session::get('info_user')->id;

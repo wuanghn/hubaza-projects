@@ -178,7 +178,28 @@ word-wrap:break-word;
 	display: inline;
 	margin-left: 20px;
 }
+.da_back_collection{
+	font-size: 16px;
+	margin-top: 10px;
+}
+.da_back_collection a{
+	font-weight: 400;
+}
+.caption{
+	position: absolute;
+	right: 10%;
+	margin-top: 10px;
+	background-color: rgba(242, 239, 239, 0.56);
+	padding: 2px 4px;
+}
+.caption i{
+	color: red;
 
+}
+.portfolio-item img{
+	max-height: 205px;
+	width: 100%;
+}
 
 
 

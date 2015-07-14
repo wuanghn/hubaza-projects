@@ -4,7 +4,86 @@ class CollectionsController extends \BaseController {
 
 	public function getIndex()
 	{
-		return View::make('collections.index');
+		$id_user = Session::get('info_user')->id;
+		//get list collection
+		$collection = DB::table('collections as col')
+		->where('col.id_user', $id_user)
+		->orderBy('col.id', 'desc')
+		->get(); 
+
+		//lấy ra image của post mới nhất
+		$images = array();
+		foreach($collection as $key){
+			$img = DB::table('collect_post as colp')
+			->join('posts as post', 'post.id', '=', 'colp.id_post')
+			->where('colp.id_collects', $key->id)
+			->orderBy('colp.id', 'desc')
+			->select('post.image')
+			->first();
+
+			if(count($img) == 0)
+				$key->image = asset('public/default_collection.jpg');
+			else
+				$key->image = $img->image;
+		}
+
+		// var_dump($collection);die;
+
+		return View::make('collections.index', array('collection' => $collection ));
+	}
+
+
+
+	public function getDeleteCollection($id){
+		$id_user = Session::get('info_user')->id;
+
+//delete collections
+		$collect = DB::table('collections')->where('id_user', $id_user)
+		->where('id', $id)
+		->delete();
+
+		if($collect){
+			//delete collec_post
+			$collect = DB::table('collect_post')
+			->where('id_collects', $id)
+			->delete();
+		}
+		return Redirect::to('collect');
+	}
+
+
+	function getDetail($id){
+		//get all post in collection
+
+		$list = DB::table('collections as col')
+		->join('collect_post as colp', 'col.id','=', 'colp.id_collects')
+		->join('posts as post', 'post.id', '=', 'colp.id_post')
+		->where('col.id', $id)
+		->select('post.title', 'post.slug', 'colp.id as id_post', 'post.image', 'col.name')
+		->orderBy('colp.id', 'desc')
+		->get();
+
+		$name = DB::table('collections')->where('id', $id)
+		->select('name', 'id')
+		->first();
+
+		return View::make('collections.show', array('list' => $list, 'name'=> $name));
+	}
+
+
+
+	function getDeletePost($id_collect, $id){
+		$id_user = Session::get('info_user')->id;
+		// var_dump($id);die;
+
+		$post = DB::table('collect_post')
+		->where('id', $id)
+		->where('id_collects', $id_collect)
+		->delete();
+
+
+		return Redirect::to('collect/detail/'.$id_collect);
+
 	}
 
 
@@ -56,16 +135,16 @@ class CollectionsController extends \BaseController {
 	public function check_exist_data($id_post,$collect_id)
 	{
 		$user_favorites = DB::table('collect_post')
-		    ->where('id_post', '=', $id_post)
-		    ->where('id_collects', '=', $collect_id)
-		    ->first();
+		->where('id_post', '=', $id_post)
+		->where('id_collects', '=', $collect_id)
+		->first();
 
 		if (is_null($user_favorites)) {
 		    // It does not exist - add to favorites button will show
-		    return true;
+			return true;
 		} else {
 		    // It exists - remove from favorites button will show
-		    return false;
+			return false;
 		}
 	}
 
@@ -77,5 +156,7 @@ class CollectionsController extends \BaseController {
 		// return last id
 		return Collection::insertGetId(['name'=>Input::get('name')]); 
 	}
+
+
 
 }
