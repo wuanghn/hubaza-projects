@@ -6,7 +6,7 @@
 <!-- Page Header -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">My Collections
+                <h1 class="page-header">Bộ sưu tập
                 </h1>
             </div>
         </div>

@@ -31,7 +31,7 @@
 			<div class="fb-share-button" data-href="{{$post->url_page}}" data-layout="button_count"></div>
 			@if(Session::has('info_user'))
         <div class="da_add_collection">
-  				<a class="btn btn-success pos-demo" data-toggle="modal" data-target="#myModal2">Add to Collection</a>
+  				<a class="btn btn-success pos-demo" data-toggle="modal" data-target="#myModal2"><i class="fa fa-plus"></i> Save</a>
   			</div>
       @endif
 
@@ -112,7 +112,7 @@
  	         	      </div>
  	         	      
 
-                  <div><p class="da_comment">Comments<p></div>
+                  <div><p class="da_comment">Bình luận<p></div>
  	         	      <div class="fb-comments" data-width="100%" data-href="{{$post->url_page}}" data-numposts="1"></div>
 
 

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">{{$name->name}}
-                <p class="da_back_collection"><a href="{{url('collect')}}" class=""><i class="fa fa-chevron-left"></i> Back to Collection</a></p>
+                <p class="da_back_collection"><a href="{{url('collect')}}" class=""><i class="fa fa-chevron-left"></i> Quay lại bộ sưu tập</a></p>
                 </h1>
                 <!-- <small><a href="#" class="\">Delete</a></small> -->
             </div>
