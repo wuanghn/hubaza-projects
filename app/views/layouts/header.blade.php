@@ -61,7 +61,9 @@
         <a class="navbar-brand" href="{{url()}}" id="da_logo">
             <img src="{{asset('public/logo-desktop.png')}}" class="logo_destop">
             <img src="{{asset('public/logo-mobile.png')}}" class="logo_mobile">
+
         </a>
+        <div class="fb-like" data-href="https://www.facebook.com/pages/L%E1%BB%9Di-Y%C3%AAu-Th%C6%B0%C6%A1ng/842592309154644" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
       <ul class="da_navmenu-nav">
         @if(Session::has('info_user'))
         
