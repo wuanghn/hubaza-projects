@@ -133,6 +133,8 @@ class CollectionsController extends \BaseController {
 		{
 			DB::table('collect_post')->insert(['id_post' => $id_post,'id_collects' => $collect_id]);
 		}
+
+		echo "done";
 	}
 
 

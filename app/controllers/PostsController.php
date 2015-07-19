@@ -224,12 +224,17 @@ class PostsController extends \BaseController
 			$height = 600;
 		}else
 		{
-			
 			$height = Input::get('height');
 
 			$filename = public_path("uploads/default/$radomString.jpg");
 
-			Image::make(Input::file('image')->getRealPath())->resize($width,$height)->save($filename);
+			// if not filter `filter`
+			if(Input::get('filter') == '')
+				Image::make(Input::file('image')->getRealPath())->resize($width,$height)->save($filename);
+			// if have filter
+			else
+				Image::make(Input::file('image')->getRealPath())->resize($width,$height)->colorize(-20, -20, -20)->save($filename);
+
 
 			$im = imagecreatefromjpeg($filename);
 
