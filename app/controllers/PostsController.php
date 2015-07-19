@@ -168,7 +168,10 @@ class PostsController extends \BaseController
 			$id_user = 3;
 		}else
 		{
-			$id_user = Session::get('info_user')->id;
+			if(Session::has('info_user'))
+				$id_user = Session::get('info_user')->id;
+			else
+				$id_user = 3;
 		}
 		return Collection::whereId_user($id_user)->get();
 	}
